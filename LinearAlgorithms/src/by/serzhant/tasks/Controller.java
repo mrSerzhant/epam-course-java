@@ -1,5 +1,7 @@
 package by.serzhant.tasks;
 
+import by.serzhant.tasks.task2.Task02;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -22,10 +24,11 @@ public class Controller {
             System.out.println(TASK + NAME_TASK_22);
             System.out.println(TASK + NAME_TASK_32);
             System.out.println("0 для выхода");
+            System.out.println("Введите номер задачи:");
 
             switch (reader.readLine()) {
                 case NAME_TASK_2:
-                    System.out.println("Задача 2");
+                    new Task02();
                     break;
                 case NAME_TASK_7:
                     System.out.println("Задача 7");
