@@ -39,8 +39,23 @@ public class Utils {
         }
     }
 
+    public static int getInputNaturalValue(){
+        while (true){
+            System.out.println("Введите число:");
+
+            try{
+                return Integer.parseInt(reader.readLine());
+            }catch (Exception e){
+                System.out.println("Ошибка");
+            }
+
+        }
+    }
+
+
+
     public static void printResult(String str){
-        System.out.println(str);
+        System.out.println(str+"\n");
     }
 
 

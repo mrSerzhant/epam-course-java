@@ -1,4 +1,4 @@
-package by.serzhant.tasks.task2;
+package by.serzhant.tasks.task02;
 
 import by.serzhant.tasks.Utils;
 
