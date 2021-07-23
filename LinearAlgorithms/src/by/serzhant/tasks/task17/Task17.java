@@ -1,9 +1,9 @@
 package by.serzhant.tasks.task17;
 
-import by.serzhant.tasks.Utils;
+import by.serzhant.tasks.utils.Utils;
 
 public class Task17 {
-    private static final double exponent = 3;
+    private static final double EXPONENT = 3;
     private double firstInputValue;
     private double secondInputValue;
     private double arithmeticResult;
@@ -21,7 +21,7 @@ public class Task17 {
     }
 
     private void calculateResult() {
-        arithmeticResult = (Math.pow(firstInputValue, exponent) + Math.pow(secondInputValue, exponent)) / 2;
+        arithmeticResult = (Math.pow(firstInputValue, EXPONENT) + Math.pow(secondInputValue, EXPONENT)) / 2;
         geometricResult = (Math.sqrt(Math.abs(firstInputValue) * Math.abs(secondInputValue)));
     }
 

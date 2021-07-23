@@ -1,6 +1,6 @@
 package by.serzhant.tasks.task32;
 
-import by.serzhant.tasks.Utils;
+import by.serzhant.tasks.utils.Utils;
 
 public class Task32 {
     private int hours;

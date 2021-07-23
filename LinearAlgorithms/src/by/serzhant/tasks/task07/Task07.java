@@ -1,6 +1,6 @@
 package by.serzhant.tasks.task07;
 
-import by.serzhant.tasks.Utils;
+import by.serzhant.tasks.utils.Utils;
 
 public class Task07 {
     private double width;

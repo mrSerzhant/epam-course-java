@@ -2,7 +2,7 @@ package by.serzhant.tasks;
 
 public class Runner {
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
         new Controller();
     }
 }

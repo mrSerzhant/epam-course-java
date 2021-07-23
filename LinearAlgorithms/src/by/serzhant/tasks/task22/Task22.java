@@ -1,9 +1,9 @@
 package by.serzhant.tasks.task22;
 
-import by.serzhant.tasks.Utils;
+import by.serzhant.tasks.utils.Utils;
 
 public class Task22 {
-    private static final String timePattern = "HHч MMмин SSс";
+    private static final String TIME_PATTERN = "HHч MMмин SSс";
     private int inputValue;
     private String result;
 
@@ -22,6 +22,6 @@ public class Task22 {
         int minutes = (inputValue - hours * 3600) / 60;
         int seconds = inputValue - hours * 3600 - minutes * 60;
 
-        result = timePattern.replace("HH",String.valueOf(hours)).replace("MM",String.valueOf(minutes)).replace("SS",String.valueOf(seconds));
+        result = TIME_PATTERN.replace("HH",String.valueOf(hours)).replace("MM",String.valueOf(minutes)).replace("SS",String.valueOf(seconds));
     }
 }

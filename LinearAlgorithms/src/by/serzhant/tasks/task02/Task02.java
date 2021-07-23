@@ -1,9 +1,9 @@
 package by.serzhant.tasks.task02;
 
-import by.serzhant.tasks.Utils;
+import by.serzhant.tasks.utils.Utils;
 
 public class Task02 {
-    public static final int constValue = 3;
+    public static final int CONST_ELEMENT = 3;
     private double result;
 
     public Task02(){
@@ -12,6 +12,6 @@ public class Task02 {
     }
 
     private void calculateResult(){
-        result = Utils.getInputValue() + constValue;
+        result = Utils.getInputValue() + CONST_ELEMENT;
     }
 }
