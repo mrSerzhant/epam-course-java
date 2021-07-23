@@ -2,6 +2,7 @@ package by.serzhant.tasks;
 
 import by.serzhant.tasks.task02.Task02;
 import by.serzhant.tasks.task07.Task07;
+import by.serzhant.tasks.task17.Task17;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -35,7 +36,7 @@ public class Controller {
                         new Task07();
                         break;
                     case NAME_TASK_17:
-                        System.out.println("Задача 17");
+                        new Task17();
                         break;
                     case NAME_TASK_22:
                         System.out.println("Задача 22");
