@@ -9,41 +9,59 @@ public class Utils {
 
     private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-    public static double getInputValue(){
-        while (true){
+    public static double getInputValue() {
+        while (true) {
             System.out.println(inputMessage);
 
-            try{
+            try {
                 return Double.parseDouble(reader.readLine());
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println(errorMessage);
             }
-
         }
     }
 
-    public static int getInputNaturalValue(){
+    public static int getInputNaturalValue() {
         int tempValue;
 
-        while (true){
+        while (true) {
             System.out.println(inputMessage);
 
-            try{
+            try {
                 tempValue = Integer.parseInt(reader.readLine());
 
-                if(tempValue >= 1) {
+                if (tempValue >= 1) {
                     return tempValue;
                 }
 
                 System.out.println(errorMessage);
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println(errorMessage);
             }
-
         }
     }
 
-    public static void printResult(String str){
-        System.out.println(str+"\n");
+    public static int getInputSpecialNaturalValue() {
+        int tempValue;
+
+        while (true) {
+            System.out.println(inputMessage);
+
+            try {
+                tempValue = Integer.parseInt(reader.readLine());
+
+                if (tempValue >= 0) {
+                    return tempValue;
+                }
+
+                System.out.println(errorMessage);
+            } catch (Exception e) {
+                System.out.println(errorMessage);
+            }
+        }
+    }
+
+    public static void printResult(String str) {
+        System.out.println(str + "\n");
     }
 }

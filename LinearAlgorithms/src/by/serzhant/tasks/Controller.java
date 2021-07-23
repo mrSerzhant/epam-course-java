@@ -4,6 +4,7 @@ import by.serzhant.tasks.task02.Task02;
 import by.serzhant.tasks.task07.Task07;
 import by.serzhant.tasks.task17.Task17;
 import by.serzhant.tasks.task22.Task22;
+import by.serzhant.tasks.task32.Task32;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -43,7 +44,7 @@ public class Controller {
                         new Task22();
                         break;
                     case NAME_TASK_32:
-                        System.out.println("Задача 32");
+                        new Task32();
                         break;
                     case "0":
                         return;
