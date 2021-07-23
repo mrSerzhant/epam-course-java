@@ -18,7 +18,7 @@ public class Controller {
     private static final String NAME_TASK_32 = "32";
     private static final String TASK = "Задача № ";
 
-    public Controller()  {
+    public Controller() {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
 
             while (true) {

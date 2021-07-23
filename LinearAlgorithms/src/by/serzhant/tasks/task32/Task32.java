@@ -88,6 +88,4 @@ public class Task32 {
             hours = hours - tempHoursValue * 23;
         }
     }
-
-
 }
