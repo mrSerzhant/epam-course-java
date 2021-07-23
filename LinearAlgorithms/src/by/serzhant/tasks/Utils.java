@@ -62,6 +62,6 @@ public class Utils {
     }
 
     public static void printResult(String str) {
-        System.out.println(str + "\n");
+        System.out.println("Результат: " + str + "\n");
     }
 }
