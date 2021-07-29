@@ -2,14 +2,15 @@ package by.serzhant.app.entity;
 
 public class Function {
     public static final int CONST_ELEMENT = 3;
-    private Number validNumber;
-    private double result;
+    private Numeral validNumeral;
 
-    public double getResult() {
-        return result;
+    public Function(Numeral numeral){
+        validNumeral = numeral;
     }
 
-    public Number getValidNumber() {
-        return validNumber;
+    public Numeral getValidNumeral() {
+        return validNumeral;
     }
+
+
 }
