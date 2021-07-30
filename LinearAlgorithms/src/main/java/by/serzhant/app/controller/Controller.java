@@ -1,9 +1,6 @@
 package by.serzhant.app.controller;
 
-import by.serzhant.app.executers.CalculateFunction;
-import by.serzhant.app.executers.CalculateMath;
-import by.serzhant.app.executers.CalculateRectangleSquare;
-import by.serzhant.app.executers.TimeTransformer;
+import by.serzhant.app.executors.*;
 import by.serzhant.app.services.Informer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,7 +10,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Controller {
-    private static Logger logger = LogManager.getLogger(Controller.class);
+    private static final Logger LOGGER = LogManager.getLogger(Controller.class);
 
     private static final String NAME_TASK_2 = "2";
     private static final String NAME_TASK_7 = "7";
@@ -40,39 +37,42 @@ public class Controller {
 
                 switch (reader.readLine()) {
                     case NAME_TASK_2:
-                        logger.info(INFO_MESSAGE + NAME_TASK_2);
+                        LOGGER.info(INFO_MESSAGE + NAME_TASK_2);
                         informer.printResult(new CalculateFunction());
-                        logger.info(SUCCESS_MESSAGE);
+                        LOGGER.info(SUCCESS_MESSAGE);
                         break;
                     case NAME_TASK_7:
-                        logger.info(INFO_MESSAGE + NAME_TASK_7);
+                        LOGGER.info(INFO_MESSAGE + NAME_TASK_7);
                         informer.printResult(new CalculateRectangleSquare());
-                        logger.info(SUCCESS_MESSAGE);
+                        LOGGER.info(SUCCESS_MESSAGE);
                         break;
                     case NAME_TASK_17:
-                        logger.info(INFO_MESSAGE + NAME_TASK_7);
+                        LOGGER.info(INFO_MESSAGE + NAME_TASK_7);
                         informer.printResult(new CalculateMath());
-                        logger.info(SUCCESS_MESSAGE);
+                        LOGGER.info(SUCCESS_MESSAGE);
                         break;
                     case NAME_TASK_22:
-                        logger.info(INFO_MESSAGE + NAME_TASK_22);
+                        LOGGER.info(INFO_MESSAGE + NAME_TASK_22);
                         informer.printResult(new TimeTransformer());
-                        logger.info(SUCCESS_MESSAGE);
+                        LOGGER.info(SUCCESS_MESSAGE);
                         break;
                     case NAME_TASK_32:
-
+                        LOGGER.info(INFO_MESSAGE + NAME_TASK_32);
+                        informer.printResult(new CalculateTime());
+                        LOGGER.info(SUCCESS_MESSAGE);
                         break;
                     case "0":
+                        LOGGER.info("Выход");
                         return;
                     default:
                         System.out.println("Ошибка");
+                        LOGGER.info("Ошибка выбора");
                         break;
                 }
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
+            LOGGER.warn("Ошибка чтения");
             e.printStackTrace();
         }
     }
-
-
 }

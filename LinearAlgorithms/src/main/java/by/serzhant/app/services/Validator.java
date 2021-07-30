@@ -19,7 +19,7 @@ public class Validator {
 
     public boolean isPositiveNumeral(String numeral) {
         try {
-            if (Double.parseDouble(numeral) <= 0) {
+            if (Double.parseDouble(numeral) < 0) {
                 logger.warn("Некоректный ввод " + numeral);
                 return false;
             }
@@ -30,4 +30,29 @@ public class Validator {
         }
     }
 
+    public boolean isValidTime(String numeral) {
+        try {
+            if (Double.parseDouble(numeral) < 0 || Double.parseDouble(numeral) > 59) {
+                logger.warn("Некоректный ввод " + numeral);
+                return false;
+            }
+            return true;
+        } catch (NumberFormatException error) {
+            logger.warn(error.toString());
+            return false;
+        }
+    }
+
+    public boolean isValidHours(String numeral) {
+        try {
+            if (Double.parseDouble(numeral) < 0 || Double.parseDouble(numeral) > 23) {
+                logger.warn("Некоректный ввод " + numeral);
+                return false;
+            }
+            return true;
+        } catch (NumberFormatException error) {
+            logger.warn(error.toString());
+            return false;
+        }
+    }
 }

@@ -1,4 +1,4 @@
-package by.serzhant.app.executers;
+package by.serzhant.app.executors;
 
 public interface Executable {
 

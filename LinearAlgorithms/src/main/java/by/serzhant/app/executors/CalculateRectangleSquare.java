@@ -1,4 +1,4 @@
-package by.serzhant.app.executers;
+package by.serzhant.app.executors;
 
 import by.serzhant.app.entity.Figure;
 import by.serzhant.app.services.Reader;
@@ -6,7 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class CalculateRectangleSquare implements Executable {
-    private static final Logger logger = LogManager.getLogger(CalculateRectangleSquare.class);
+    private static final Logger LOGGER = LogManager.getLogger(CalculateRectangleSquare.class);
     private Figure figure;
     private String result;
 
@@ -18,13 +18,13 @@ public class CalculateRectangleSquare implements Executable {
     private void initFigure() {
         Reader reader = new Reader();
         figure = new Figure(reader.readPositiveNumeral());
-        logger.info(String.format("Входной элемент %f, Постоянный элемент %f", figure.getFirstSide(), figure.getSecondSide()));
+        LOGGER.info(String.format("Входной элемент %f, Постоянный элемент %f", figure.getFirstSide(), figure.getSecondSide()));
     }
 
     @Override
     public void execute() {
         result = String.valueOf(figure.getFirstSide() * figure.getSecondSide());
-        logger.info("Расчет выполнен, результат - ." + result);
+        LOGGER.info("Расчет выполнен, результат - ." + result);
     }
 
     @Override

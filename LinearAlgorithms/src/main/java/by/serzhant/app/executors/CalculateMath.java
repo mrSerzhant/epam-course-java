@@ -1,4 +1,4 @@
-package by.serzhant.app.executers;
+package by.serzhant.app.executors;
 
 import by.serzhant.app.entity.Numeral;
 import by.serzhant.app.services.Reader;
@@ -6,7 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class CalculateMath implements Executable {
-    private static final Logger logger = LogManager.getLogger(CalculateMath.class);
+    private static final Logger LOGGER = LogManager.getLogger(CalculateMath.class);
     public static final double EXPONENT = 3;
     private Reader reader = new Reader();
     private Numeral firstNumeral;
@@ -21,7 +21,7 @@ public class CalculateMath implements Executable {
     private void initNumerals() {
         firstNumeral = new Numeral(reader.readNumeral());
         secondNumeral = new Numeral(reader.readNumeral());
-        logger.info(String.format("Входной элемент 1 - %f, Входной элемент 2 - %f, Степень - %f", firstNumeral.getValidNumeral(), secondNumeral.getValidNumeral(), EXPONENT));
+        LOGGER.info(String.format("Входной элемент 1 - %f, Входной элемент 2 - %f, Степень - %f", firstNumeral.getValidNumeral(), secondNumeral.getValidNumeral(), EXPONENT));
     }
 
     @Override
@@ -32,15 +32,15 @@ public class CalculateMath implements Executable {
             switch ((int) reader.readNumeral()) {
                 case 1:
                     result = String.valueOf((Math.pow(firstNumeral.getValidNumeral(), EXPONENT) + Math.pow(secondNumeral.getValidNumeral(), EXPONENT)) / 2);
-                    logger.info("Арифм. расчет выполнен - ." + result);
+                    LOGGER.info("Арифм. расчет выполнен - ." + result);
                     return;
                 case 2:
                     result = String.valueOf((Math.sqrt(Math.abs(firstNumeral.getValidNumeral()) * Math.abs(secondNumeral.getValidNumeral()))));
-                    logger.info("Геометр. расчет выполнен - ." + result);
+                    LOGGER.info("Геометр. расчет выполнен - ." + result);
                     return;
                 case 0:
                     result = "Расчет не выполнен";
-                    logger.warn("Выбор не сделан");
+                    LOGGER.warn("Выбор не сделан");
                     return;
                 default:
                     System.out.println("Ошибка");
