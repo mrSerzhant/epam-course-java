@@ -1,0 +1,9 @@
+by\serzhant\app\controller\Controller.class
+by\serzhant\app\runner\Runner.class
+by\serzhant\app\entity\Number.class
+by\serzhant\app\services\Informer.class
+by\serzhant\app\entity\Time.class
+by\serzhant\app\executers\CalculateFunction.class
+by\serzhant\app\services\Printer.class
+by\serzhant\app\entity\Figure.class
+by\serzhant\app\entity\Function.class
