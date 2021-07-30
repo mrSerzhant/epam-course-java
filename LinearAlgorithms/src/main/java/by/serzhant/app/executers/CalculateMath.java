@@ -6,8 +6,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class CalculateMath implements Executable {
-    public static final double EXPONENT = 3;
     private static final Logger logger = LogManager.getLogger(CalculateMath.class);
+    public static final double EXPONENT = 3;
     private Reader reader = new Reader();
     private Numeral firstNumeral;
     private Numeral secondNumeral;
@@ -29,7 +29,7 @@ public class CalculateMath implements Executable {
         while (true) {
             System.out.println("Введите 1 - среднее арифметическое чисел, 2 - среднее геометрическое чисел, 0 - выход");
 
-            switch ((int) reader.readPositiveNumeral()) {
+            switch ((int) reader.readNumeral()) {
                 case 1:
                     result = String.valueOf((Math.pow(firstNumeral.getValidNumeral(), EXPONENT) + Math.pow(secondNumeral.getValidNumeral(), EXPONENT)) / 2);
                     logger.info("Арифм. расчет выполнен - ." + result);

@@ -3,6 +3,7 @@ package by.serzhant.app.controller;
 import by.serzhant.app.executers.CalculateFunction;
 import by.serzhant.app.executers.CalculateMath;
 import by.serzhant.app.executers.CalculateRectangleSquare;
+import by.serzhant.app.executers.TimeTransformer;
 import by.serzhant.app.services.Informer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -54,7 +55,9 @@ public class Controller {
                         logger.info(SUCCESS_MESSAGE);
                         break;
                     case NAME_TASK_22:
-
+                        logger.info(INFO_MESSAGE + NAME_TASK_22);
+                        informer.printResult(new TimeTransformer());
+                        logger.info(SUCCESS_MESSAGE);
                         break;
                     case NAME_TASK_32:
 
