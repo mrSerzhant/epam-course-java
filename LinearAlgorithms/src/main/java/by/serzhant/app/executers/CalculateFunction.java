@@ -19,14 +19,14 @@ public class CalculateFunction implements Executable {
     private void initFunction() {
         Reader reader = new Reader();
 
-        function = new Function(new Numeral(reader.readNumber()));
+        function = new Function(new Numeral(reader.readNumeral()));
         logger.info(String.format("Входной элемент %f, Константа %d", function.getValidNumeral().getValidNumeral(), Function.CONST_ELEMENT));
     }
 
     @Override
     public void execute() {
         result = String.valueOf(function.getValidNumeral().getValidNumeral() + Function.CONST_ELEMENT);
-        logger.info("Расчет выполнен, результат - " + result);
+        logger.info("Расчет выполнен, результат - ." + result);
     }
 
     public String getResult() {

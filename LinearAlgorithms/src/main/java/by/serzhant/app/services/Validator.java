@@ -7,13 +7,25 @@ public class Validator {
     private static final Logger logger = LogManager.getLogger(Validator.class);
 
 
-
-    public boolean isValidNumber(String number) {
+    public boolean isNumeral(String numeral) {
         try {
-            Double.parseDouble(number);
+            Double.parseDouble(numeral);
             return true;
-        } catch(NumberFormatException error) {
-            logger.info(error.toString());
+        } catch (NumberFormatException error) {
+            logger.warn(error.toString());
+            return false;
+        }
+    }
+
+    public boolean isPositiveNumber(String numeral) {
+        try {
+            if (Double.parseDouble(numeral) <= 0) {
+                logger.warn("Некоректный ввод " + numeral);
+                return false;
+            }
+            return true;
+        } catch (NumberFormatException error) {
+            logger.warn(error.toString());
             return false;
         }
     }
