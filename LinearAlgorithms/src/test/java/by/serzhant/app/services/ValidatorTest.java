@@ -29,24 +29,24 @@ public class ValidatorTest {
     @Test(dataProvider = "data-provider")
     public void isNumeralTest(String str) {
         Validator validator = new Validator();
-        Assert.assertEquals(true, validator.isNumeral(str));
+        Assert.assertTrue(validator.isNumeral(str));
     }
 
-    @Test (dataProvider = "positive-data-provider")
+    @Test(dataProvider = "positive-data-provider")
     public void isPositiveNumeralTest(String str) {
         Validator validator = new Validator();
-        Assert.assertEquals(true, validator.isPositiveNumeral(str));
+        Assert.assertTrue(validator.isPositiveNumeral(str));
     }
 
-    @Test (dataProvider = "time-data-provider")
+    @Test(dataProvider = "time-data-provider")
     public void isValidTimeTest(String str) {
         Validator validator = new Validator();
-        Assert.assertEquals(true, validator.isValidTime(str));
+        Assert.assertTrue(validator.isValidTime(str));
     }
 
-    @Test (dataProvider = "hour-data-provider")
+    @Test(dataProvider = "hour-data-provider")
     public void isValidTimeHour(String str) {
         Validator validator = new Validator();
-        Assert.assertEquals(true, validator.isValidHour(str));
+        Assert.assertTrue(validator.isValidHour(str));
     }
 }
