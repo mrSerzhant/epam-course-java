@@ -17,7 +17,7 @@ public class Validator {
         }
     }
 
-    public boolean isPositiveNumber(String numeral) {
+    public boolean isPositiveNumeral(String numeral) {
         try {
             if (Double.parseDouble(numeral) <= 0) {
                 logger.warn("Некоректный ввод " + numeral);
@@ -29,6 +29,5 @@ public class Validator {
             return false;
         }
     }
-
 
 }

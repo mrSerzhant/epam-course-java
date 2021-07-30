@@ -1,6 +1,7 @@
 package by.serzhant.app.controller;
 
 import by.serzhant.app.executers.CalculateFunction;
+import by.serzhant.app.executers.CalculateMath;
 import by.serzhant.app.executers.CalculateRectangleSquare;
 import by.serzhant.app.services.Informer;
 import org.apache.logging.log4j.LogManager;
@@ -20,6 +21,7 @@ public class Controller {
     private static final String NAME_TASK_32 = "32";
     private static final String TASK = "Задача № ";
     private static final String SUCCESS_MESSAGE = "Вычисление функции выполнено";
+    private static final String INFO_MESSAGE = "Выполнение задачи ";
 
     public Controller() {
         Informer informer = new Informer();
@@ -37,18 +39,19 @@ public class Controller {
 
                 switch (reader.readLine()) {
                     case NAME_TASK_2:
-                        logger.info("Выполнение задачи " + NAME_TASK_2);
+                        logger.info(INFO_MESSAGE + NAME_TASK_2);
                         informer.printResult(new CalculateFunction());
                         logger.info(SUCCESS_MESSAGE);
                         break;
                     case NAME_TASK_7:
-                        logger.info("Выполнение задачи " + NAME_TASK_7);
+                        logger.info(INFO_MESSAGE + NAME_TASK_7);
                         informer.printResult(new CalculateRectangleSquare());
                         logger.info(SUCCESS_MESSAGE);
-
                         break;
                     case NAME_TASK_17:
-
+                        logger.info(INFO_MESSAGE + NAME_TASK_7);
+                        informer.printResult(new CalculateMath());
+                        logger.info(SUCCESS_MESSAGE);
                         break;
                     case NAME_TASK_22:
 

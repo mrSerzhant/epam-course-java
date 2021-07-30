@@ -41,7 +41,7 @@ public class Reader {
             try {
                 String inputMessage = reader.readLine();
 
-                if (validator.isPositiveNumber(inputMessage)) {
+                if (validator.isPositiveNumeral(inputMessage)) {
                     loger.info("Корректный ввод - " + inputMessage);
                     return Double.parseDouble(inputMessage);
                 }
