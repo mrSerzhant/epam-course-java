@@ -75,7 +75,7 @@ public class Reader {
             try {
                 String inputMessage = reader.readLine();
 
-                if (validator.isValidHours(inputMessage)) {
+                if (validator.isValidHour(inputMessage)) {
                     LOGGER.info(inputMessage);
                     return Double.parseDouble(inputMessage);
                 }

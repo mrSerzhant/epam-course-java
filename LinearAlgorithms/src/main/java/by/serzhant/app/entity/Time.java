@@ -7,6 +7,7 @@ public class Time {
 
     public Time() {
     }
+
     public Time(Numeral hour, Numeral minute, Numeral second) {
         this.hour = hour;
         this.minute = minute;

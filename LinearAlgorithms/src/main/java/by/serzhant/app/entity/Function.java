@@ -11,6 +11,4 @@ public class Function {
     public Numeral getValidNumeral() {
         return validNumeral;
     }
-
-
 }

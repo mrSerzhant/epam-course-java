@@ -71,8 +71,7 @@ public class Controller {
                 }
             }
         } catch (IOException e) {
-            LOGGER.warn("Ошибка чтения");
-            e.printStackTrace();
+            LOGGER.error("Ошибка чтения");
         }
     }
 }

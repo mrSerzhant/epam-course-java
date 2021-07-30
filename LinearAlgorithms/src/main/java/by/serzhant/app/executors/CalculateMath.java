@@ -21,7 +21,7 @@ public class CalculateMath implements Executable {
     private void initNumerals() {
         firstNumeral = new Numeral(reader.readNumeral());
         secondNumeral = new Numeral(reader.readNumeral());
-        LOGGER.info(String.format("Входной элемент 1 - %f, Входной элемент 2 - %f, Степень - %f", firstNumeral.getValidNumeral(), secondNumeral.getValidNumeral(), EXPONENT));
+        LOGGER.info("Входной элемент 1 - {}, Входной элемент 2 - {}, Степень - {}", firstNumeral.getValidNumeral(), secondNumeral.getValidNumeral(), EXPONENT);
     }
 
     @Override
@@ -32,11 +32,11 @@ public class CalculateMath implements Executable {
             switch ((int) reader.readNumeral()) {
                 case 1:
                     result = String.valueOf((Math.pow(firstNumeral.getValidNumeral(), EXPONENT) + Math.pow(secondNumeral.getValidNumeral(), EXPONENT)) / 2);
-                    LOGGER.info("Арифм. расчет выполнен - ." + result);
+                    LOGGER.info("Арифм. расчет выполнен - {}", result);
                     return;
                 case 2:
                     result = String.valueOf((Math.sqrt(Math.abs(firstNumeral.getValidNumeral()) * Math.abs(secondNumeral.getValidNumeral()))));
-                    LOGGER.info("Геометр. расчет выполнен - ." + result);
+                    LOGGER.info("Геометр. расчет выполнен - {}", result);
                     return;
                 case 0:
                     result = "Расчет не выполнен";

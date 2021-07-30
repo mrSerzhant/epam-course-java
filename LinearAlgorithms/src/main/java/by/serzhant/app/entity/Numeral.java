@@ -19,9 +19,4 @@ public class Numeral {
     public int getRealNumeral() {
         return realNumeral;
     }
-
-    public void setRealNumeral(int realNumeral) {
-        this.realNumeral = realNumeral;
-    }
 }
-

@@ -41,8 +41,8 @@ public class CalculateTime implements Executable {
         System.out.println("Изменить время на n секунд:");
         inputSeconds = new Numeral((int) reader.readPositiveNumeral());
 
-        LOGGER.info(String.format("Заданное время - %dч-%dм-%dс, изменить на %dч, %dм, %dс", time.getHour().getRealNumeral(), time.getMinute().getRealNumeral(), time.getSecond().getRealNumeral(),
-                inputHours.getRealNumeral(), inputMinutes.getRealNumeral(), inputSeconds.getRealNumeral()));
+        LOGGER.info("Заданное время - {}ч-{}м-{}с, изменить на {}ч, {}м, {}с", time.getHour().getRealNumeral(), time.getMinute().getRealNumeral(), time.getSecond().getRealNumeral(),
+                inputHours.getRealNumeral(), inputMinutes.getRealNumeral(), inputSeconds.getRealNumeral());
     }
 
     @Override
@@ -76,7 +76,7 @@ public class CalculateTime implements Executable {
         }
 
         result = String.format("%dч - %dм - %dс", time.getHour().getRealNumeral(), time.getMinute().getRealNumeral(), time.getSecond().getRealNumeral());
-        LOGGER.info(String.format("Время изменено, новые значения %dч, %dм, %dс", time.getHour().getRealNumeral(), time.getMinute().getRealNumeral(), time.getSecond().getRealNumeral()));
+        LOGGER.info("Время изменено, новые значения {}ч, {}м, {}с", time.getHour().getRealNumeral(), time.getMinute().getRealNumeral(), time.getSecond().getRealNumeral());
     }
 
     @Override

@@ -18,13 +18,13 @@ public class CalculateRectangleSquare implements Executable {
     private void initFigure() {
         Reader reader = new Reader();
         figure = new Figure(reader.readPositiveNumeral());
-        LOGGER.info(String.format("Входной элемент %f, Постоянный элемент %f", figure.getFirstSide(), figure.getSecondSide()));
+        LOGGER.info("Входной элемент {}, Постоянный элемент {}", figure.getFirstSide(), figure.getSecondSide());
     }
 
     @Override
     public void execute() {
         result = String.valueOf(figure.getFirstSide() * figure.getSecondSide());
-        LOGGER.info("Расчет выполнен, результат - ." + result);
+        LOGGER.info("Расчет выполнен, результат - {}", result);
     }
 
     @Override

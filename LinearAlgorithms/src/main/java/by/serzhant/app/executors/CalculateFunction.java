@@ -20,13 +20,13 @@ public class CalculateFunction implements Executable {
         Reader reader = new Reader();
 
         function = new Function(new Numeral(reader.readNumeral()));
-        LOGGER.info(String.format("Входной элемент %f, Константа %d", function.getValidNumeral().getValidNumeral(), Function.CONST_ELEMENT));
+        LOGGER.info("Входной элемент {}, Константа {}", function.getValidNumeral().getValidNumeral(), Function.CONST_ELEMENT);
     }
 
     @Override
     public void execute() {
         result = String.valueOf(function.getValidNumeral().getValidNumeral() + Function.CONST_ELEMENT);
-        LOGGER.info("Расчет выполнен, результат - ." + result);
+        LOGGER.info("Расчет выполнен, результат - {}", result);
     }
 
     public String getResult() {

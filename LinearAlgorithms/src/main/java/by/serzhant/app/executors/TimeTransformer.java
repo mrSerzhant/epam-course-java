@@ -5,22 +5,22 @@ import by.serzhant.app.services.Reader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class TimeTransformer implements Executable{
-    private static final Logger LOGGER = LogManager.getLogger(CalculateMath.class);
+public class TimeTransformer implements Executable {
+    private static final Logger LOGGER = LogManager.getLogger(TimeTransformer.class);
     private static final String TIME_PATTERN = "HHч MMмин SSс";
     private Numeral timeInSeconds;
     private String result;
 
-    public TimeTransformer(){
+    public TimeTransformer() {
         initTime();
         execute();
     }
 
-    private void initTime(){
+    private void initTime() {
         Reader reader = new Reader();
 
-        timeInSeconds = new Numeral((int)reader.readPositiveNumeral());
-        LOGGER.info(String.format("Входной элемент %d", timeInSeconds.getRealNumeral()));
+        timeInSeconds = new Numeral((int) reader.readPositiveNumeral());
+        LOGGER.info("Входной элемент {}", timeInSeconds.getRealNumeral());
     }
 
     @Override
@@ -30,7 +30,7 @@ public class TimeTransformer implements Executable{
         int seconds = timeInSeconds.getRealNumeral() - hours * 3600 - minutes * 60;
 
         result = TIME_PATTERN.replace("HH", String.valueOf(hours)).replace("MM", String.valueOf(minutes)).replace("SS", String.valueOf(seconds));
-        LOGGER.info("Расчет выполнен, результат - ." + result);
+        LOGGER.info("Расчет выполнен, результат - {}", result);
     }
 
     @Override
