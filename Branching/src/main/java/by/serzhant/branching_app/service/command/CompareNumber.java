@@ -1,6 +1,6 @@
-package by.serzhant.branching_app.service.commands;
+package by.serzhant.branching_app.service.command;
 
-import by.serzhant.branching_app.service.DaoReader;
+import by.serzhant.branching_app.database.dataprocessing.DaoReader;
 import by.serzhant.branching_app.service.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,19 +27,19 @@ public class CompareNumber implements Command {
                 secondValue = Double.parseDouble(listInputValues.get(1));
             } catch (RuntimeException e) {
                 LOGGER.error("Ошибка в парсинге данных");
-                return Validator.ERROR_MESSAGE;
+                return Command.ERROR_MESSAGE;
             }
 
             String response = "no";
             if (firstValue < secondValue) {
                 response = "yes";
-                LOGGER.info("Расчет выполнел, результат {}", response);
+                LOGGER.info(Command.SUCCESS_EXECUTION_MESSAGE +" {}", response);
                 return response;
             }
 
             return response;
         }
 
-        return Validator.ERROR_MESSAGE;
+        return Command.ERROR_MESSAGE;
     }
 }

@@ -1,29 +1,26 @@
 package by.serzhant.branching_app.view;
 
 import by.serzhant.branching_app.controller.CommandsFactory;
-import by.serzhant.branching_app.service.commands.Command;
+import by.serzhant.branching_app.service.command.Command;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.io.IOException;
-
 
 public class Menu {
     private final static Logger LOGGER = LogManager.getLogger(Menu.class);
 
-    public Menu()  {
+    public Menu() {
         run();
     }
 
     private void run() {
         Printer printer = new Printer();
-        Reader reader = new Reader();
+        ConsoleReader consoleReader = new ConsoleReader();
         CommandsFactory factory = CommandsFactory.getInstance();
 
         while (true) {
             printer.printMenu();
 
-            String inputValue = reader.readInputValue();
+            String inputValue = consoleReader.readInputValue();
 
             if (inputValue.equals("0")) {
                 printer.printExitMessage();
@@ -32,12 +29,19 @@ public class Menu {
             }
 
             Command command = factory.getCommand(inputValue);
-            LOGGER.info("Выполнение программы № - {}",inputValue);
+            LOGGER.info("Выполнение программы № - {}", inputValue);
 
-            Object result = command.execute();
+            Object result;
+
+            try {
+                result = command.execute();
+            } catch (RuntimeException e) {
+                LOGGER.error(Printer.NOT_VALID_ARGUMENT);
+                result = Printer.NOT_VALID_ARGUMENT;
+            }
             printer.printResult(result);
 
-            LOGGER.info("Результат выполения - {}",printer.getResult(result));
+            LOGGER.info("Результат выполения - {}", printer.getResult(result));
         }
     }
 }

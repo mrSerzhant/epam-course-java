@@ -4,13 +4,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Reader {
-        private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+public class ConsoleReader {
+    private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-    public String readInputValue(){
-        try{
+    public String readInputValue() {
+        try {
             return reader.readLine();
-        }catch (IOException exception){
+        } catch (IOException exception) {
             return exception.toString();
         }
     }

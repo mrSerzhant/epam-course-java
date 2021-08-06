@@ -1,6 +1,6 @@
 package by.serzhant.branching_app.controller;
 
-import by.serzhant.branching_app.service.commands.*;
+import by.serzhant.branching_app.service.command.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,12 +14,7 @@ public class CommandsFactory {
         allCommands.put("7", new CalculateABSFunction());
         allCommands.put("17", new ChangeNumeral());
         allCommands.put("22", new SwapNumeral());
-     /*   allCommands.put("", );
-        allCommands.put("", );
-        allCommands.put("", );
-        allCommands.put("", );
-        allCommands.put("", );
-        allCommands.put("", ); */
+        allCommands.put("32", new FindPositiveSum());
     }
 
     public static CommandsFactory getInstance() {
@@ -27,10 +22,6 @@ public class CommandsFactory {
     }
 
     public Command getCommand(String commandName) {
-        if (commandName == null || commandName.isEmpty()) {
-            throw new IllegalArgumentException("Неверный аргумент");
-        }
-
         return allCommands.get(commandName);
     }
 }

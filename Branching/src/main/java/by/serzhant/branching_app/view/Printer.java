@@ -7,6 +7,7 @@ public class Printer {
     private static final String NAME_TASK_22 = "22";
     private static final String NAME_TASK_32 = "32";
     private static final String TASK = "Задача № ";
+    public static final String NOT_VALID_ARGUMENT = "Неверный аргумент";
 
     public void printMenu(){
         System.out.println(TASK + NAME_TASK_2);
@@ -19,7 +20,7 @@ public class Printer {
     }
 
     public void printResult(Object inputObject){
-        System.out.println("Результат: " +  inputObject.toString());
+        System.out.println("Результат: " +  inputObject);
     }
 
     public String getResult(Object inputObject){

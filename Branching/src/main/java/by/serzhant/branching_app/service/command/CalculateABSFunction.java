@@ -1,7 +1,7 @@
-package by.serzhant.branching_app.service.commands;
+package by.serzhant.branching_app.service.command;
 
 import by.serzhant.branching_app.entity.Function;
-import by.serzhant.branching_app.service.DaoReader;
+import by.serzhant.branching_app.database.dataprocessing.DaoReader;
 import by.serzhant.branching_app.service.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -32,17 +32,17 @@ public class CalculateABSFunction implements Command {
                 foursValue = Double.parseDouble(listInputValues.get(3));
             } catch (RuntimeException e) {
                 LOGGER.error("Ошибка в парсинге данных");
-                return Validator.ERROR_MESSAGE;
+                return Command.ERROR_MESSAGE;
             }
 
             Function function = new Function(firstValue, secondValue, thirdValue, foursValue);
 
             double result = Math.abs(function.getResult());
-            LOGGER.info("Расчет выполнел, результат {}", result);
+            LOGGER.info(Command.SUCCESS_EXECUTION_MESSAGE + " {}", result);
 
             return result;
         }
 
-        return Validator.ERROR_MESSAGE;
+        return Command.ERROR_MESSAGE;
     }
 }

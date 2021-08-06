@@ -1,16 +1,11 @@
-package by.serzhant.branching_app.service.commands;
+package by.serzhant.branching_app.service.command;
 
-import by.serzhant.branching_app.service.DaoReader;
-import by.serzhant.branching_app.service.DaoWriter;
+import by.serzhant.branching_app.database.dataprocessing.DaoReader;
+import by.serzhant.branching_app.database.dataprocessing.DaoWriter;
 import by.serzhant.branching_app.service.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 
 public class SwapNumeral implements Command {
@@ -33,22 +28,22 @@ public class SwapNumeral implements Command {
                 y = Double.parseDouble(listInputValues.get(1));
             } catch (RuntimeException e) {
                 LOGGER.error("Ошибка в парсинге данных");
-                return Validator.ERROR_MESSAGE;
+                return Command.ERROR_MESSAGE;
             }
 
             DaoWriter writer = new DaoWriter();
 
             if (x > y) {
-                LOGGER.info("Результат выполнения {}, {}", x, y);
+                LOGGER.info(Command.SUCCESS_EXECUTION_MESSAGE + " {}, {}", x, y);
                 return String.format("%f %f", x, y);
             }
 
             List<String> newList = writer.writeDaoFile(DAO_PATH, y, x);
 
-            LOGGER.info("Результат выполнения {}, {}", newList.get(0), newList.get(1));
+            LOGGER.info(Command.SUCCESS_EXECUTION_MESSAGE + " {}, {}", newList.get(0), newList.get(1));
             return String.format("%s %s ", newList.get(0), newList.get(1));
         }
 
-        return Validator.ERROR_MESSAGE;
+        return Command.ERROR_MESSAGE;
     }
 }
