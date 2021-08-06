@@ -1,6 +1,7 @@
 package by.serzhant.branching_app.controller;
 
 import by.serzhant.branching_app.service.commands.CalculateABSFunction;
+import by.serzhant.branching_app.service.commands.ChangeNumeral;
 import by.serzhant.branching_app.service.commands.Command;
 import by.serzhant.branching_app.service.commands.CompareNumber;
 
@@ -14,8 +15,8 @@ public class CommandsFactory {
     public CommandsFactory() {
         allCommands.put("2", new CompareNumber());
         allCommands.put("7", new CalculateABSFunction());
-       /* allCommands.put("", );
-        allCommands.put("", );
+        allCommands.put("17", new ChangeNumeral());
+     /*   allCommands.put("", );
         allCommands.put("", );
         allCommands.put("", );
         allCommands.put("", );

@@ -10,7 +10,7 @@ import java.util.List;
 
 public class CalculateABSFunction implements Command {
     private final static Logger LOGGER = LogManager.getLogger(CalculateABSFunction.class);
-    private static final String DAO_PATH = "./Branching/src/main/java/by/serzhant/branching_app/database/task7/inputvaluesfortask17";
+    private static final String DAO_PATH = "./Branching/src/main/java/by/serzhant/branching_app/database/task7/inputvaluesfortask7";
 
     @Override
     public Object execute() {
@@ -19,7 +19,7 @@ public class CalculateABSFunction implements Command {
 
         List<String> listInputValues = reader.readDaoFile(DAO_PATH);
 
-        if (validator.isValidInputValue(listInputValues) && listInputValues.size() == 4) {
+        if (validator.isValidInputValue(listInputValues)) {
             double firstValue;
             double secondValue;
             double thirdValue;
@@ -30,7 +30,7 @@ public class CalculateABSFunction implements Command {
                 secondValue = Double.parseDouble(listInputValues.get(1));
                 thirdValue = Double.parseDouble(listInputValues.get(2));
                 foursValue = Double.parseDouble(listInputValues.get(3));
-            } catch (NumberFormatException e) {
+            } catch (RuntimeException e) {
                 LOGGER.error("Ошибка в парсинге данных");
                 return Validator.ERROR_MESSAGE;
             }
