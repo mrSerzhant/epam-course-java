@@ -1,9 +1,6 @@
 package by.serzhant.branching_app.controller;
 
-import by.serzhant.branching_app.service.commands.CalculateABSFunction;
-import by.serzhant.branching_app.service.commands.ChangeNumeral;
-import by.serzhant.branching_app.service.commands.Command;
-import by.serzhant.branching_app.service.commands.CompareNumber;
+import by.serzhant.branching_app.service.commands.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,8 +13,8 @@ public class CommandsFactory {
         allCommands.put("2", new CompareNumber());
         allCommands.put("7", new CalculateABSFunction());
         allCommands.put("17", new ChangeNumeral());
+        allCommands.put("22", new SwapNumeral());
      /*   allCommands.put("", );
-        allCommands.put("", );
         allCommands.put("", );
         allCommands.put("", );
         allCommands.put("", );

@@ -2,7 +2,6 @@ package by.serzhant.branching_app.service.commands;
 
 import by.serzhant.branching_app.service.DaoReader;
 import by.serzhant.branching_app.service.Validator;
-import by.serzhant.branching_app.view.Menu;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

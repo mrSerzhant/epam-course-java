@@ -5,11 +5,13 @@ import by.serzhant.branching_app.service.commands.Command;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.IOException;
+
 
 public class Menu {
     private final static Logger LOGGER = LogManager.getLogger(Menu.class);
 
-    public Menu() {
+    public Menu()  {
         run();
     }
 

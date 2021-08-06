@@ -20,7 +20,7 @@ public class DaoReader {
             LOGGER.info("Чтение из базы данных");
             return Files.readAllLines(path);
         } catch (IOException e) {
-            LOGGER.info("Ошибка при чтении из базы данных");
+            LOGGER.error("Ошибка при чтении из базы данных");
             return new ArrayList<>();
         }
     }
