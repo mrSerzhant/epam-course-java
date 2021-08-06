@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="LinearAlgorithms" />
+        <module name="Branching" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Branching" target="8" />
       <module name="LinearAlgorithms" target="7" />
       <module name="Test" target="1.5" />
     </bytecodeTargetLevel>

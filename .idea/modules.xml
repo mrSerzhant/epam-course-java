@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Branching/Branching.iml" filepath="$PROJECT_DIR$/Branching/Branching.iml" />
       <module fileurl="file://$PROJECT_DIR$/LinearAlgorithms/LinearAlgorithms.iml" filepath="$PROJECT_DIR$/LinearAlgorithms/LinearAlgorithms.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/epam-course-java.iml" filepath="$PROJECT_DIR$/.idea/epam-course-java.iml" />
     </modules>
