@@ -1,5 +1,6 @@
 package by.serzhant.branching_app.controller;
 
+import by.serzhant.branching_app.service.commands.CalculateABSFunction;
 import by.serzhant.branching_app.service.commands.Command;
 import by.serzhant.branching_app.service.commands.CompareNumber;
 
@@ -10,20 +11,20 @@ public class CommandsFactory {
     private static final CommandsFactory instance = new CommandsFactory();
     private Map<String, Command> allCommands = new HashMap<>();
 
-    public CommandsFactory(){
-        allCommands.put("2",new CompareNumber());
-      /*  allCommands.put("",);
-        allCommands.put("",);
-        allCommands.put("",);
-        allCommands.put("",);
-        allCommands.put("",);
-        allCommands.put("",);
-        allCommands.put("",);
-        allCommands.put("",);
-        allCommands.put("",); */
+    public CommandsFactory() {
+        allCommands.put("2", new CompareNumber());
+        allCommands.put("7", new CalculateABSFunction());
+       /* allCommands.put("", );
+        allCommands.put("", );
+        allCommands.put("", );
+        allCommands.put("", );
+        allCommands.put("", );
+        allCommands.put("", );
+        allCommands.put("", );
+        allCommands.put("", ); */
     }
 
-    public static CommandsFactory getInstance(){
+    public static CommandsFactory getInstance() {
         return instance;
     }
 

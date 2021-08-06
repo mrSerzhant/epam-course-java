@@ -18,12 +18,12 @@ public class Printer {
         System.out.println("Введите номер задачи:");
     }
 
-    public void printResult(Object o){
-        System.out.println(o.toString());
+    public void printResult(Object inputObject){
+        System.out.println("Результат: " +  inputObject.toString());
     }
 
-    public String getResult(Object o){
-        return o.toString();
+    public String getResult(Object inputObject){
+        return inputObject.toString();
     }
 
     public void printExitMessage(){
