@@ -25,11 +25,4 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-Branching/src/main/resources/log/
-Branching/src/test/
-Branching/target/generated-sources/
-LinearAlgorithms/target/generated-sources/
-LinearAlgorithms/target/generated-test-sources/
-Loops/src/test/
-Loops/target/classes/log4j2.xml
-Loops/target/generated-sources/
+
