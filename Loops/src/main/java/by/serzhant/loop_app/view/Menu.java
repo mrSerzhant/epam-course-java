@@ -1,7 +1,7 @@
-package by.serzhant.branching_app.view;
+package by.serzhant.loop_app.view;
 
-import by.serzhant.branching_app.controller.CommandsFactory;
-import by.serzhant.branching_app.service.command.Command;
+import by.serzhant.loop_app.controller.CommandsFactory;
+import by.serzhant.loop_app.service.command.Command;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

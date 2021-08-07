@@ -1,4 +1,4 @@
-package by.serzhant.branching_app.service.command;
+package by.serzhant.loop_app.service.command;
 
 public interface Command {
     String SUCCESS_EXECUTION_MESSAGE = "Результат выполнения";
