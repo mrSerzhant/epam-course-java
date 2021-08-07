@@ -1,4 +1,6 @@
-package by.serzhant.loop_app.view;
+package by.serzhant.loop_app.view.console_processing;
+
+import by.serzhant.loop_app.view.locale.MessageManager;
 
 public class ConsolePrinter {
     private static final String NAME_TASK_2 = "2";

@@ -1,6 +1,6 @@
 package by.serzhant.loop_app.service.command;
 
-import by.serzhant.loop_app.database.dataprocessing.DaoReader;
+import by.serzhant.loop_app.database.data_processing.DaoReader;
 import by.serzhant.loop_app.service.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,6 +12,11 @@ public class ValidatorInputString implements Command {
     private static final String DAO_PATH = "./Loops/src/main/java/by/serzhant/loop_app/database/task32/inputvaluesfortask32";
     private static final String LETTERS = "abcdefghijklmnopqrstuvwxyzабвгдеёжзийклмнопрстуфхцчшщъыьэюя_";
     private static final String NUMERALS = "0123456789";
+
+    /**
+     *
+     * @return
+     */
 
     @Override
     public Object execute() {

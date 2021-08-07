@@ -1,4 +1,4 @@
-package by.serzhant.branching_app.view;
+package by.serzhant.branching_app.view.concolep_rocessing;
 
 import java.io.BufferedReader;
 import java.io.IOException;

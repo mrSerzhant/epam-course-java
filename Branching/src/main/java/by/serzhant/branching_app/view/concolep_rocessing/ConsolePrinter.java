@@ -1,4 +1,6 @@
-package by.serzhant.branching_app.view;
+package by.serzhant.branching_app.view.concolep_rocessing;
+
+import by.serzhant.branching_app.view.locale.MessageManager;
 
 public class ConsolePrinter {
     private static final String NAME_TASK_2 = "2";

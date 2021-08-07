@@ -1,4 +1,4 @@
-package by.serzhant.branching_app.view;
+package by.serzhant.branching_app.view.locale;
 
 import java.util.Locale;
 import java.util.ResourceBundle;

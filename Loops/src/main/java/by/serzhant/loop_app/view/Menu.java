@@ -2,8 +2,15 @@ package by.serzhant.loop_app.view;
 
 import by.serzhant.loop_app.controller.CommandsFactory;
 import by.serzhant.loop_app.service.command.Command;
+import by.serzhant.loop_app.view.console_processing.ConsolePrinter;
+import by.serzhant.loop_app.view.console_processing.ConsoleReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+/**
+ * @author alexander
+ * @version 1.0
+ */
 
 public class Menu {
     private final static Logger LOGGER = LogManager.getLogger(Menu.class);
@@ -14,9 +21,10 @@ public class Menu {
 
     private void run() {
         ConsoleReader consoleReader = new ConsoleReader();
-        ConsolePrinter.printSetLanguageInfo();
 
+        ConsolePrinter.printSetLanguageInfo();
         ConsolePrinter consolePrinter = new ConsolePrinter(consoleReader.readInputValue());
+
         CommandsFactory factory = CommandsFactory.getInstance();
 
         while (true) {

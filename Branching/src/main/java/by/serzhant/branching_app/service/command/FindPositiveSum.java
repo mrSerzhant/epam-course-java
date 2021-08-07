@@ -1,7 +1,7 @@
 package by.serzhant.branching_app.service.command;
 
-import by.serzhant.branching_app.database.dataprocessing.DaoReader;
-import by.serzhant.branching_app.service.Validator;
+import by.serzhant.branching_app.database.data_processing.DaoReader;
+import by.serzhant.branching_app.service.validator.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

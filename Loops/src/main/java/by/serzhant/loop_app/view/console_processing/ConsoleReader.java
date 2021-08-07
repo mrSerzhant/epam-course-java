@@ -1,4 +1,4 @@
-package by.serzhant.loop_app.view;
+package by.serzhant.loop_app.view.console_processing;
 
 import java.io.BufferedReader;
 import java.io.IOException;

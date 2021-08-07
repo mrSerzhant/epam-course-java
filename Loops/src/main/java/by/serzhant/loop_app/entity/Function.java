@@ -5,7 +5,6 @@ import java.util.Objects;
 public class Function {
     private double result;
 
-
     public void initFunction(int inputParam) {
         result = inputParam;
     }

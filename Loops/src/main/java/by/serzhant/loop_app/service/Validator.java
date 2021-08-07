@@ -8,10 +8,6 @@ public class Validator {
     }
 
     public boolean isRealNumeral(int inputNumeral) {
-        if (inputNumeral > 0) {
-            return true;
-        }
-
-        return false;
+        return inputNumeral > 0;
     }
 }

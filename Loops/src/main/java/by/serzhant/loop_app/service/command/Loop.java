@@ -1,6 +1,6 @@
 package by.serzhant.loop_app.service.command;
 
-import by.serzhant.loop_app.database.dataprocessing.DaoReader;
+import by.serzhant.loop_app.database.data_processing.DaoReader;
 import by.serzhant.loop_app.service.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

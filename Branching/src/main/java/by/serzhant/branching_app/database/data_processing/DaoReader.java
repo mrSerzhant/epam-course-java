@@ -1,4 +1,4 @@
-package by.serzhant.branching_app.database.dataprocessing;
+package by.serzhant.branching_app.database.data_processing;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
