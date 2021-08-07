@@ -1,8 +1,6 @@
 package by.serzhant.loop_app.controller;
 
-import by.serzhant.loop_app.service.command.Command;
-import by.serzhant.loop_app.service.command.Loop;
-import by.serzhant.loop_app.service.command.LoopWithStep;
+import by.serzhant.loop_app.service.command.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,9 +12,9 @@ public class CommandsFactory {
     public CommandsFactory() {
         allCommands.put("2", new Loop());
         allCommands.put("7", new LoopWithStep());
-       // allCommands.put("17", new ChangeNumeral());
-       // allCommands.put("22", new SwapNumeral());
-       // allCommands.put("32", new FindPositiveSum());
+        allCommands.put("17", new LoopWithStep2());
+        allCommands.put("22", new LoopWithStep3());
+        allCommands.put("32", new ValidatorInputString());
     }
 
     public static CommandsFactory getInstance() {

@@ -5,11 +5,12 @@ import by.serzhant.loop_app.service.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.math.BigInteger;
 import java.util.List;
 
-public class Loop implements Command {
-    private final static Logger LOGGER = LogManager.getLogger(Loop.class);
-    private static final String DAO_PATH = "./Loops/src/main/java/by/serzhant/loop_app/database/task2/inputvaluesfortask2";
+public class LoopWithStep2 implements Command {
+    private final static Logger LOGGER = LogManager.getLogger(LoopWithStep2.class);
+    private static final String DAO_PATH = "./Loops/src/main/java/by/serzhant/loop_app/database/task17/inputvaluesfortask17";
 
     @Override
     public Object execute() {
@@ -30,25 +31,18 @@ public class Loop implements Command {
                 return Command.ERROR_MESSAGE;
             }
 
-            StringBuilder stringBuilder = new StringBuilder();
-
-            if (firstValue > secondValue) {
-
-                for (int i = firstValue; i > secondValue; i--) {
-                    stringBuilder.append(i).append(" ");
-                }
-
-                LOGGER.info(Command.SUCCESS_EXECUTION_MESSAGE +" {}", stringBuilder);
-                return stringBuilder;
+            if (!validator.isRealNumeral(secondValue)) {
+                return Command.ERROR_MESSAGE;
             }
 
-            for (int i = firstValue; i < secondValue; i++) {
-                stringBuilder.append(i).append(" ");
+            BigInteger result = new BigInteger(String.valueOf(firstValue));
+
+            for (int i = firstValue + 1; i <= firstValue + (secondValue - 1); i++) {
+                result = result.multiply(BigInteger.valueOf(i));
             }
 
-            LOGGER.info(Command.SUCCESS_EXECUTION_MESSAGE +" {}", stringBuilder);
-            return stringBuilder;
-
+            LOGGER.info(Command.SUCCESS_EXECUTION_MESSAGE +" {}", result);
+            return result;
         }
 
         return Command.ERROR_MESSAGE;

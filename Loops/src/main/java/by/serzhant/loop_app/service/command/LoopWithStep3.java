@@ -8,9 +8,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
-public class LoopWithStep implements Command {
-    private final static Logger LOGGER = LogManager.getLogger(LoopWithStep.class);
-    private static final String DAO_PATH = "./Loops/src/main/java/by/serzhant/loop_app/database/task7/inputvaluesfortask7";
+public class LoopWithStep3 implements Command {
+    private final static Logger LOGGER = LogManager.getLogger(LoopWithStep3.class);
+    private static final String DAO_PATH = "./Loops/src/main/java/by/serzhant/loop_app/database/task22/inputvaluesfortask22";
 
     @Override
     public Object execute() {
@@ -40,13 +40,8 @@ public class LoopWithStep implements Command {
             if (firstValue > secondValue) {
 
                 for (int i = firstValue; i > secondValue; i = i - step) {
-
-                    if (i > 2) {
-                        function.initFunction(i);
-                    } else {
-                        function.initFunction(-i);
-                    }
-                    stringBuilder.append(function).append(" ");
+                    function.initSinFunction(i);
+                    stringBuilder.append(i).append(" - ").append(function).append("\n");
                 }
 
                 LOGGER.info(Command.SUCCESS_EXECUTION_MESSAGE +" {}", stringBuilder);
@@ -54,13 +49,8 @@ public class LoopWithStep implements Command {
             }
 
             for (int i = firstValue; i < secondValue; i = i + step) {
-
-                if (i > 2) {
-                    function.initFunction(i);
-                } else {
-                    function.initFunction(-i);
-                }
-                stringBuilder.append(function).append(" ");
+                function.initSinFunction(i);
+                stringBuilder.append(i).append(" - ").append(function).append("\n");
             }
 
             LOGGER.info(Command.SUCCESS_EXECUTION_MESSAGE +" {}", stringBuilder);

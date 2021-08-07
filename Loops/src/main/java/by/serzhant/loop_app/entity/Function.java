@@ -29,6 +29,6 @@ public class Function {
 
     @Override
     public String toString() {
-        return "Результат функции: " + result;
+        return String.valueOf(result);
     }
 }
