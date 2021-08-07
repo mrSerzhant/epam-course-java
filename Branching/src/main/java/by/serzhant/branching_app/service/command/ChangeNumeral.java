@@ -20,12 +20,12 @@ public class ChangeNumeral implements Command {
         List<String> listInputValues = reader.readDaoFile(DAO_PATH);
 
         if (validator.isValidInputValue(listInputValues)) {
-            int firstValue;
-            int secondValue;
+            double firstValue;
+            double secondValue;
 
             try {
-                firstValue = Integer.parseInt(listInputValues.get(0));
-                secondValue = Integer.parseInt(listInputValues.get(1));
+                firstValue = Double.parseDouble(listInputValues.get(0));
+                secondValue = Double.parseDouble(listInputValues.get(1));
             } catch (RuntimeException e) {
                 LOGGER.error("Ошибка в парсинге данных");
                 return Command.ERROR_MESSAGE;
@@ -40,11 +40,11 @@ public class ChangeNumeral implements Command {
             } else if (firstValue < secondValue) {
                 writer.writeDaoFile(DAO_PATH, secondValue, secondValue);
                 LOGGER.info(Command.SUCCESS_EXECUTION_MESSAGE + " {}, {}", secondValue, secondValue);
-                return String.format("%d %d", secondValue, secondValue);
+                return String.format("%f %f", secondValue, secondValue);
             } else {
                 writer.writeDaoFile(DAO_PATH, firstValue, firstValue);
                 LOGGER.info(Command.SUCCESS_EXECUTION_MESSAGE + " {}, {}", firstValue, firstValue);
-                return String.format("%d %d", firstValue, firstValue);
+                return String.format("%f %f", firstValue, firstValue);
             }
         }
 

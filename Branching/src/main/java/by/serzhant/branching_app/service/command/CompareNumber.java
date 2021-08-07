@@ -30,9 +30,9 @@ public class CompareNumber implements Command {
                 return Command.ERROR_MESSAGE;
             }
 
-            String response = "no";
+            String response = Command.NO_MESSAGE;
             if (firstValue < secondValue) {
-                response = "yes";
+                response = Command.YES_MESSAGE;
                 LOGGER.info(Command.SUCCESS_EXECUTION_MESSAGE +" {}", response);
                 return response;
             }

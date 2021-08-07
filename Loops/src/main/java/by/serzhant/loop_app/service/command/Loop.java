@@ -34,7 +34,7 @@ public class Loop implements Command {
 
             if (firstValue > secondValue) {
 
-                for (int i = firstValue; i > secondValue; i--) {
+                for (int i = firstValue; i >= secondValue; i--) {
                     stringBuilder.append(i).append(" ");
                 }
 

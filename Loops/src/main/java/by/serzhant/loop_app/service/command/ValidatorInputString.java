@@ -39,8 +39,8 @@ public class ValidatorInputString implements Command {
                 if (LETTERS.contains(String.valueOf(inputString.charAt(i))) || NUMERALS.contains(String.valueOf(inputString.charAt(i)))) {
                     secondCheck = true;
                 } else {
-                    LOGGER.info(Command.NOT_POSITIVE_RESULT_MESSAGE + " {}", Command.NO_MESSAGE);
-                    return Command.NOT_POSITIVE_RESULT_MESSAGE;
+                    LOGGER.info(Command.INVALID_RESULT_MESSAGE + " {}", Command.NO_MESSAGE);
+                    return Command.INVALID_RESULT_MESSAGE;
                 }
             }
 

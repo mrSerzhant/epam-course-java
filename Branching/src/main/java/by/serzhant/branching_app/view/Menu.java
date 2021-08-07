@@ -13,8 +13,10 @@ public class Menu {
     }
 
     private void run() {
-        ConsolePrinter consolePrinter = new ConsolePrinter();
         ConsoleReader consoleReader = new ConsoleReader();
+        ConsolePrinter.printSetLanguageInfo();
+
+        ConsolePrinter consolePrinter = new ConsolePrinter(consoleReader.readInputValue());
         CommandsFactory factory = CommandsFactory.getInstance();
 
         while (true) {
@@ -36,8 +38,8 @@ public class Menu {
             try {
                 result = command.execute();
             } catch (RuntimeException e) {
-                LOGGER.error(ConsolePrinter.NOT_VALID_ARGUMENT);
-                result = ConsolePrinter.NOT_VALID_ARGUMENT;
+                LOGGER.error("Неверный аргумент");
+                result = consolePrinter.getInvalidArgumentMessage();
             }
             consolePrinter.printResult(result);
 

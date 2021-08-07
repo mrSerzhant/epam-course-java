@@ -43,7 +43,7 @@ public class FindPositiveSum implements Command {
                 return secondValue + thirdValue;
             }
 
-            return "Нет положиительного результата";
+            return Command.INVALID_RESULT_MESSAGE;
         }
 
         return Command.ERROR_MESSAGE;
