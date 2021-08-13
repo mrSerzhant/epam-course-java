@@ -2,13 +2,13 @@ package by.serzhant.branching_app.view;
 
 import by.serzhant.branching_app.controller.CommandsFactory;
 import by.serzhant.branching_app.service.command.Command;
-import by.serzhant.branching_app.view.concolep_rocessing.ConsolePrinter;
-import by.serzhant.branching_app.view.concolep_rocessing.ConsoleReader;
+import by.serzhant.branching_app.view.concole_processing.ConsolePrinter;
+import by.serzhant.branching_app.view.concole_processing.ConsoleReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * @author alexandr
+ * @author alexander
  * @version 1.0
  */
 
@@ -48,8 +48,8 @@ public class Menu {
                 LOGGER.error("Неверный аргумент");
                 result = consolePrinter.getInvalidArgumentMessage();
             }
-            consolePrinter.printResult(result);
 
+            consolePrinter.printResult(result);
             LOGGER.info("Результат выполения - {}", result);
         }
     }

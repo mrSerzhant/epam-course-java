@@ -1,4 +1,4 @@
-package by.serzhant.branching_app.view.concolep_rocessing;
+package by.serzhant.branching_app.view.concole_processing;
 
 import by.serzhant.branching_app.view.locale.MessageManager;
 
