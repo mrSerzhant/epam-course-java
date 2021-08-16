@@ -21,7 +21,7 @@ public class SortsFactory {
 
           allSorts.put("1", sorter.bubbleSort(array));
 
-        // allCommands.put("7", new CalculateABSFunction());
+         allSorts.put("2", sorter.shakerSort(array));
         //   allCommands.put("17", new ChangeNumeral());
         //  allCommands.put("22", new SwapNumeral());
         //  allCommands.put("32", new FindPositiveSum());
