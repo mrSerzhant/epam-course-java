@@ -18,11 +18,11 @@ public class ArraySorter {
             return ERROR_MESSAGE;
         }
 
-        if(isOneElement(inputArray)){
+        if (isOneElement(inputArray)) {
             return inputArray;
         }
 
-        Double[] array = (Double[]) inputArray.getArray();
+        Double[] array = Arrays.copyOf((Double[]) inputArray.getArray(), inputArray.getLength());
 
         boolean isSorted = false;
 
@@ -44,18 +44,18 @@ public class ArraySorter {
         return Arrays.toString(array);
     }
 
-    public Object shakerSort(Array<?> inputArray){
+    public Object shakerSort(Array<?> inputArray) {
 
         if (inputArray == null || inputArray.getLength() == 0) {
             LOGGER.error(ERROR_MESSAGE);
             return ERROR_MESSAGE;
         }
 
-        if(isOneElement(inputArray)){
+        if (isOneElement(inputArray)) {
             return inputArray;
         }
 
-        Double[] array = (Double[]) inputArray.getArray();
+        Double[] array = Arrays.copyOf((Double[]) inputArray.getArray(), inputArray.getLength());
 
         boolean isSorted = false;
 
@@ -72,7 +72,7 @@ public class ArraySorter {
                 }
             }
 
-            for (int i = inputArray.getLength()-2; i > 0; i--) {
+            for (int i = inputArray.getLength() - 2; i > 0; i--) {
 
                 if (array[i] < array[i - 1]) {
                     double tempValue = array[i];
@@ -87,8 +87,35 @@ public class ArraySorter {
         return Arrays.toString(array);
     }
 
+    public Object selectionSort(Array<?> inputArray) {
 
+        if (inputArray == null || inputArray.getLength() == 0) {
+            LOGGER.error(ERROR_MESSAGE);
+            return ERROR_MESSAGE;
+        }
 
+        if (isOneElement(inputArray)) {
+            return inputArray;
+        }
+
+        Double[] array = Arrays.copyOf((Double[]) inputArray.getArray(), inputArray.getLength());
+
+        for (int i = 0; i < array.length; i++) {
+            double minElement = array[i];
+
+            for (int j = i+1; j < array.length; j++) {
+
+                if (array[j] < minElement) {
+                    minElement = array[j];
+                    array[j] = array[i];
+                    array[i] = minElement;
+                }
+            }
+        }
+
+        LOGGER.info(SUCCESS_MESSAGE);
+        return Arrays.toString(array);
+    }
 
 
     private boolean isOneElement(Array<?> inputArray) {

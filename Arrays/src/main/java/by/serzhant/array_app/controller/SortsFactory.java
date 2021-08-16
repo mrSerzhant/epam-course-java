@@ -13,16 +13,17 @@ public class SortsFactory {
     private Map<String, Object> allSorts = new HashMap<>();
 
 
-
-    public SortsFactory()  {
+    public SortsFactory() {
         ArrayBuilder arrayBuilder = new ArrayBuilder();
         ArraySorter sorter = new ArraySorter();
-        Array<?> array = new Array<>(arrayBuilder.getArray());
+        final Array<?> array = new Array<>(arrayBuilder.getArray());
 
-          allSorts.put("1", sorter.bubbleSort(array));
 
-         allSorts.put("2", sorter.shakerSort(array));
-        //   allCommands.put("17", new ChangeNumeral());
+        allSorts.put("1", sorter.bubbleSort(array));
+        allSorts.put("2", sorter.shakerSort(array));
+        allSorts.put("17", sorter.selectionSort(array));
+
+        //
         //  allCommands.put("22", new SwapNumeral());
         //  allCommands.put("32", new FindPositiveSum());
     }
@@ -31,7 +32,7 @@ public class SortsFactory {
         return instance;
     }
 
-    public Object  getSort(String sortName) {
+    public Object getSort(String sortName) {
         return allSorts.get(sortName);
     }
 }
