@@ -2,7 +2,10 @@ package by.serzhant.array_app.controller;
 
 import by.serzhant.array_app.entity.Array;
 import by.serzhant.array_app.service.ArrayBuilder;
-import by.serzhant.array_app.service.ArraySorter;
+import by.serzhant.array_app.service.command.BubbleCommand;
+import by.serzhant.array_app.service.command.SelectionCommand;
+import by.serzhant.array_app.service.command.ShakerCommand;
+import by.serzhant.array_app.service.command.Command;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,18 +13,16 @@ import java.util.Map;
 public class SortsFactory {
     private static final SortsFactory instance = new SortsFactory();
 
-    private Map<String, Object> allSorts = new HashMap<>();
+    private Map<String, Command> allSorts = new HashMap<>();
 
 
     public SortsFactory() {
         ArrayBuilder arrayBuilder = new ArrayBuilder();
-        ArraySorter sorter = new ArraySorter();
-        final Array<?> array = new Array<>(arrayBuilder.getArray());
+        Array<?> array = new Array<>(arrayBuilder.getArray());
 
-
-        allSorts.put("1", sorter.bubbleSort(array));
-        allSorts.put("2", sorter.shakerSort(array));
-        allSorts.put("17", sorter.selectionSort(array));
+        allSorts.put("1", new BubbleCommand(array));
+        allSorts.put("2", new ShakerCommand(array));
+        allSorts.put("17", new SelectionCommand(array));
 
         //
         //  allCommands.put("22", new SwapNumeral());
@@ -32,7 +33,7 @@ public class SortsFactory {
         return instance;
     }
 
-    public Object getSort(String sortName) {
+    public Command getCommand(String sortName) {
         return allSorts.get(sortName);
     }
 }

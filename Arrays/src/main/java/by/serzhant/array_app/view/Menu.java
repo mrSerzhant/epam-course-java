@@ -2,9 +2,8 @@ package by.serzhant.array_app.view;
 
 
 import by.serzhant.array_app.controller.SortsFactory;
-import by.serzhant.array_app.entity.Array;
+import by.serzhant.array_app.entity.Message;
 import by.serzhant.array_app.service.command.Command;
-import by.serzhant.array_app.view.console_processing.ConsolePrinter;
 import by.serzhant.array_app.view.console_processing.ConsoleReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -40,24 +39,28 @@ public class Menu {
             }*/
 
 
-            ConsoleReader consoleReader = new ConsoleReader();
+        ConsoleReader consoleReader = new ConsoleReader();
         SortsFactory factory = SortsFactory.getInstance();
         String inputValue = consoleReader.readInputValue();
-            LOGGER.info("Выполнение программы № - {}", inputValue);
 
-            Object result = null;
 
-            try {
-             result = factory.getSort(inputValue);
-            } catch (RuntimeException e) {
-                LOGGER.error("Неверный аргумент");
-           //     result = consolePrinter.getInvalidArgumentMessage();
-            }
+        Command command = factory.getCommand(inputValue);
+        LOGGER.info("Выполнение программы № - {}", inputValue);
+
+        Message result;
+
+        try {
+            result = command.sort();
+        } catch (RuntimeException e) {
+            LOGGER.error("Неверный аргумент");
+            result = null;
+            // result = consolePrinter.getInvalidArgumentMessage();
+        }
 
         System.out.println(result.toString());
 
-          //  consolePrinter.printResult(result);
-          //  LOGGER.info("Результат выполения - {}", result);
-        }
+        //  consolePrinter.printResult(result);
+        //  LOGGER.info("Результат выполения - {}", result);
     }
+}
 
