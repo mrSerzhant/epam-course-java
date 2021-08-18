@@ -15,9 +15,6 @@ public class SortsFactory {
 
     public SortsFactory() {
         ArrayBuilder arrayBuilder = new ArrayBuilder();
-
-        Integer i = new Integer(2);
-
         Array<?> array = new Array<>(arrayBuilder.getArray());
 
         allSorts.put("1", new BubbleSort(array));
@@ -25,6 +22,7 @@ public class SortsFactory {
         allSorts.put("3", new SelectionSort(array));
         allSorts.put("4", new InsertionSort(array));
         allSorts.put("5", new MergeSort(array));
+        allSorts.put("6", new MergeSort(array));
         allSorts.put("invalidParam", new ExceptionCommand());
         //
         //  allCommands.put("22", new SwapNumeral());
