@@ -21,6 +21,7 @@ public class BubbleSort implements Command {
     public Array<?> sort() throws SortException {
 
         if (!validator.isValidArray(array)) {
+            LOGGER.error(ERROR_MESSAGE);
             throw new SortException(Command.ERROR_MESSAGE);
         }
 
@@ -46,7 +47,7 @@ public class BubbleSort implements Command {
             }
         }
 
-        LOGGER.info(SUCCESS_MESSAGE);
+        LOGGER.info(SUCCESS_SORT_MESSAGE);
         return new Array<>(sortArray);
     }
 }

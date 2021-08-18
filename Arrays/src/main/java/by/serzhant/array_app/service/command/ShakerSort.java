@@ -20,6 +20,7 @@ public class ShakerSort implements Command {
     @Override
     public Array<?> sort() throws SortException {
         if (!validator.isValidArray(array)) {
+            LOGGER.error(ERROR_MESSAGE);
             throw new SortException(Command.ERROR_MESSAGE);
         }
 
@@ -55,7 +56,7 @@ public class ShakerSort implements Command {
             }
         }
 
-        LOGGER.info(SUCCESS_MESSAGE);
-        return null;
+        LOGGER.info(SUCCESS_SORT_MESSAGE);
+        return new Array<>(sortArray);
     }
 }
