@@ -7,14 +7,8 @@ public class Array <T extends Number> {
     private int length;
 
     public Array(T[] array){
-        this.array = array ;
-        this.length = this.array.length;
-
-
-
-
-
-
+        this.array = array;
+        this.length = array.length;
     }
 
     public T[] getArray() {

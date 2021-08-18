@@ -2,8 +2,9 @@ package by.serzhant.array_app.view;
 
 
 import by.serzhant.array_app.controller.SortsFactory;
-import by.serzhant.array_app.entity.Message;
+import by.serzhant.array_app.entity.Array;
 import by.serzhant.array_app.service.command.Command;
+import by.serzhant.array_app.view.console_processing.ConsolePrinter;
 import by.serzhant.array_app.view.console_processing.ConsoleReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,10 +22,14 @@ public class Menu {
     }
 
     private void run() {
-    /*
+        ConsoleReader consoleReader = new ConsoleReader();
         ConsolePrinter.printSetLanguageInfo();
 
         ConsolePrinter consolePrinter = new ConsolePrinter(consoleReader.readInputValue());
+        SortsFactory factory = SortsFactory.getInstance();
+
+
+
 
 
         while (true) {
@@ -36,21 +41,43 @@ public class Menu {
                 consolePrinter.printExitMessage();
                 LOGGER.info("Завершение работы");
                 return;
-            }*/
+            }
+
+            Command command = factory.getCommand(inputValue);
+            LOGGER.info("Выполнение программы № - {}", inputValue);
 
 
-        ConsoleReader consoleReader = new ConsoleReader();
-        SortsFactory factory = SortsFactory.getInstance();
-        String inputValue = consoleReader.readInputValue();
+
+            try {
+                Array<?> c = command.sort();
+                consolePrinter.printResult(c);
+            } catch (Exception e) {
+                consolePrinter.printResult(e.getMessage());
+            }
+        }
 
 
-        Command command = factory.getCommand(inputValue);
-        LOGGER.info("Выполнение программы № - {}", inputValue);
 
-        Message result;
 
-        try {
-            result = command.sort();
+
+
+
+
+
+
+
+    }
+}
+
+
+
+
+
+
+
+
+      /*  try {
+         Double d=    command.sort();
         } catch (RuntimeException e) {
             LOGGER.error("Неверный аргумент");
             result = null;
@@ -64,3 +91,4 @@ public class Menu {
     }
 }
 
+*/

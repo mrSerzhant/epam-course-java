@@ -1,6 +1,7 @@
 package by.serzhant.array_app.service.command;
 
-import by.serzhant.array_app.entity.Message;
+import by.serzhant.array_app.entity.Array;
+import by.serzhant.array_app.service.exception.SortException;
 
 public interface Command {
     String SUCCESS_EXECUTION_MESSAGE = "Результат выполнения";
@@ -10,5 +11,5 @@ public interface Command {
     String YES_MESSAGE = "yes";
     String INVALID_RESULT_MESSAGE = "invalid_result";
 
-    Message sort();
+    Array<?> sort() throws SortException;
 }

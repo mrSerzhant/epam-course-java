@@ -1,14 +1,15 @@
 package by.serzhant.array_app.view.console_processing;
 
+import by.serzhant.array_app.entity.Array;
 import by.serzhant.array_app.view.locale.MessageManager;
 
 public class ConsolePrinter {
-    private static final String NAME_TASK_2 = "2";
-    private static final String NAME_TASK_7 = "7";
-    private static final String NAME_TASK_17 = "17";
-    private static final String NAME_TASK_22 = "22";
-    private static final String NAME_TASK_32 = "32";
-    private static final String TASK = "task_number";
+    private static final String BUBBLE_SORT = "bubble_sort";
+    private static final String SHAKER_SORT = "shaker_sort";
+    private static final String SELECTION_SORT = "selection_sort";
+    private static final String INSERTION_SORT = "insertion_sort";
+    private static final String MERGE_SORT = "merge_sort";
+  //  private static final String TASK = "task_number";
 
     private String invalidArgumentMessage;
     private MessageManager messageManager;
@@ -40,11 +41,11 @@ public class ConsolePrinter {
     }
 
     public void printMenu() {
-        System.out.println(messageManager.getString(TASK) + NAME_TASK_2);
-        System.out.println(messageManager.getString(TASK) + NAME_TASK_7);
-        System.out.println(messageManager.getString(TASK) + NAME_TASK_17);
-        System.out.println(messageManager.getString(TASK) + NAME_TASK_22);
-        System.out.println(messageManager.getString(TASK) + NAME_TASK_32);
+        System.out.println(messageManager.getString(BUBBLE_SORT));
+        System.out.println(messageManager.getString(SHAKER_SORT));
+        System.out.println(messageManager.getString(SELECTION_SORT));
+        System.out.println(messageManager.getString(INSERTION_SORT));
+        System.out.println(messageManager.getString(MERGE_SORT));
         System.out.println(messageManager.getString("press_to_exit") + "\n");
         System.out.println(messageManager.getString("press_to_choice"));
     }
@@ -54,7 +55,26 @@ public class ConsolePrinter {
     }
 
     public void printResult(Object inputObject) {
-        System.out.println(messageManager.getString("result_info") + messageManager.getString(inputObject.toString()));
+
+        if(inputObject instanceof Array){
+
+            for(Number object: ((Array<?>) inputObject).getArray()){
+                System.out.print(object);
+
+            }
+
+
+        }else{
+
+            System.out.println(inputObject.toString());
+
+        }
+
+
+
+
+
+        //System.out.println(messageManager.getString("result_info") + messageManager.getString(inputObject.toString()));
     }
 
     public void printExitMessage() {
