@@ -9,6 +9,7 @@ public class ConsolePrinter {
     private static final String SELECTION_SORT = "selection_sort";
     private static final String INSERTION_SORT = "insertion_sort";
     private static final String MERGE_SORT = "merge_sort";
+    private static final String SHELL_SORT = "shell_sort";
   //  private static final String TASK = "task_number";
 
     private String invalidArgumentMessage;
@@ -46,6 +47,7 @@ public class ConsolePrinter {
         System.out.println(messageManager.getString(SELECTION_SORT));
         System.out.println(messageManager.getString(INSERTION_SORT));
         System.out.println(messageManager.getString(MERGE_SORT));
+        System.out.println(messageManager.getString(SHELL_SORT));
         System.out.println(messageManager.getString("press_to_exit") + "\n");
         System.out.println(messageManager.getString("press_to_choice"));
     }
