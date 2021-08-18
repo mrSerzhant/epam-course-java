@@ -22,7 +22,7 @@ public class SortsFactory {
         allSorts.put("3", new SelectionSort(array));
         allSorts.put("4", new InsertionSort(array));
         allSorts.put("5", new MergeSort(array));
-        allSorts.put("6", new MergeSort(array));
+        allSorts.put("6", new ShellSort(array));
         allSorts.put("invalidParam", new ExceptionCommand());
         //
         //  allCommands.put("22", new SwapNumeral());
