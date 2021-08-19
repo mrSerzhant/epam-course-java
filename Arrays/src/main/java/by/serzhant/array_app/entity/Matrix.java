@@ -4,9 +4,19 @@ import java.util.Arrays;
 
 public class Matrix <T extends Number> {
     private T[][] matrix;
+    private int row;
 
     public Matrix(T[][] matrix) {
         this.matrix = matrix;
+        this.row = matrix.length;
+    }
+
+    public T[][] getMatrix() {
+        return matrix;
+    }
+
+    public int getRowLength() {
+        return row;
     }
 
     @Override
@@ -24,8 +34,7 @@ public class Matrix <T extends Number> {
 
     @Override
     public String toString() {
-        return "Matrix{" +
-                "matrix=" + Arrays.toString(matrix) +
-                '}';
+        return Arrays.deepToString(matrix);
+
     }
 }

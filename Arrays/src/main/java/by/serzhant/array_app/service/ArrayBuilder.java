@@ -1,7 +1,6 @@
 package by.serzhant.array_app.service;
 
 import by.serzhant.array_app.database.data_processing.DaoReader;
-import by.serzhant.array_app.service.validator.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -10,7 +9,6 @@ import java.util.List;
 public class ArrayBuilder {
     private static final Logger LOGGER = LogManager.getLogger(ArrayBuilder.class);
     private static final String DAO_PATH = "./Arrays/src/main/java/by/serzhant/array_app/database/array/array";
-    private Validator validator = new Validator();
     private Double[] array;
 
     public ArrayBuilder() {
@@ -33,6 +31,7 @@ public class ArrayBuilder {
             }
         }
 
+        LOGGER.info("{} ", "SUCCESS BUILD");
         return tempArray;
     }
 

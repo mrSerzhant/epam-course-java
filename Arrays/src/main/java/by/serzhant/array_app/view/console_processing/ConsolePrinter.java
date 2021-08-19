@@ -59,22 +59,15 @@ public class ConsolePrinter {
     public void printResult(Object inputObject) {
 
         if(inputObject instanceof Array){
-
-            for(Number object: ((Array<?>) inputObject).getArray()){
-                System.out.print(object);
-
+            for(Object element: ((Array<?>) inputObject).getArray()){
+                System.out.print(element);
             }
-
 
         }else{
 
             System.out.println(inputObject.toString());
 
         }
-
-
-
-
 
         //System.out.println(messageManager.getString("result_info") + messageManager.getString(inputObject.toString()));
     }

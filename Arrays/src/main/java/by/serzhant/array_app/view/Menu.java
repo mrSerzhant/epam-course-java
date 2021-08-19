@@ -43,8 +43,8 @@ public class Menu {
             LOGGER.info("Выполнение программы № - {}", inputValue);
 
             try {
-                Array<?> c = command.sort();
-                consolePrinter.printResult(c);
+                Object result = command.execute();
+                consolePrinter.printResult(result);
             } catch (Exception e) {
                 consolePrinter.printResult(e.getMessage());
             }

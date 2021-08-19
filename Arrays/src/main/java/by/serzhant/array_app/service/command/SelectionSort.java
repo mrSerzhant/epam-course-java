@@ -1,7 +1,7 @@
 package by.serzhant.array_app.service.command;
 
 import by.serzhant.array_app.entity.Array;
-import by.serzhant.array_app.service.exception.SortException;
+import by.serzhant.array_app.service.exception.ExecuteException;
 import by.serzhant.array_app.service.validator.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,10 +22,10 @@ public class SelectionSort implements Command {
      */
 
     @Override
-    public Array<?> sort() throws SortException {
+    public Object execute() throws ExecuteException {
         if (!validator.isValidArray(array)) {
             LOGGER.error(ERROR_MESSAGE);
-            throw new SortException(Command.ERROR_MESSAGE);
+            throw new ExecuteException(Command.ERROR_MESSAGE);
         }
 
         if (array.getLength() == 1) {
