@@ -32,7 +32,7 @@ public class SubtractMatrix implements Command {
             throw new ExecuteException(Command.ERROR_MESSAGE);
         }
 
-        if (validator.isEqualMatrix(firstMatrix, secondMatrix)) {
+        if (!validator.isEqualMatrix(firstMatrix, secondMatrix)) {
             LOGGER.error("Matrixs isnt equals");
             throw new ExecuteException(Command.ERROR_MESSAGE);
         }

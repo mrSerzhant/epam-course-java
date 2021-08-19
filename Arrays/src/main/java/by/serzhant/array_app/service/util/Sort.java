@@ -13,7 +13,7 @@ public class Sort {
     private static final Logger LOGGER = LogManager.getLogger(Sort.class);
     private static final String SUCCESS_SORT = "SUCCESS_SORT";
 
-    public Double[] bubbleSort(Array<?> inputArray) {
+    public Array<?> bubbleSort(Array<?> inputArray) {
         Double[] sortArray = Arrays.copyOf((Double[]) inputArray.getArray(), inputArray.getLength());
 
         boolean isSorted = false;
@@ -32,11 +32,11 @@ public class Sort {
             }
         }
 
-        LOGGER.info("{} {}",SUCCESS_SORT, sortArray);
-        return sortArray;
+        LOGGER.info("{} {}", SUCCESS_SORT, sortArray);
+        return new Array<>(sortArray);
     }
 
-    public Double[] insertionSort(Array<?> inputArray) {
+    public Array<?> insertionSort(Array<?> inputArray) {
         Double[] sortArray = Arrays.copyOf((Double[]) inputArray.getArray(), inputArray.getLength());
 
         for (int i = 1; i < sortArray.length; i++) {
@@ -51,19 +51,18 @@ public class Sort {
             }
         }
 
-        LOGGER.info("{} {}",SUCCESS_SORT, sortArray);
-        return sortArray;
+        LOGGER.info("{} {}", SUCCESS_SORT, sortArray);
+        return new Array<>(sortArray);
     }
 
-
-    public Double[] mergeSort(Array<?> inputArray) {
+    public Array<?> mergeSort(Array<?> inputArray) {
         Double[] firstPartSortArray = Arrays.copyOfRange((Double[]) inputArray.getArray(), 0, inputArray.getLength() / 2);
         Double[] secondPartSortArray = Arrays.copyOfRange((Double[]) inputArray.getArray(), inputArray.getLength() / 2, inputArray.getLength());
 
-        return merge(customBubbleSort(firstPartSortArray), customBubbleSort(secondPartSortArray));
+        return new Array<>(merge(customBubbleSort(firstPartSortArray), customBubbleSort(secondPartSortArray)));
     }
 
-    public Double[] selectionSort(Array<?> inputArray) {
+    public Array<?> selectionSort(Array<?> inputArray) {
         Double[] sortArray = Arrays.copyOf((Double[]) inputArray.getArray(), inputArray.getLength());
 
         for (int i = 0; i < sortArray.length; i++) {
@@ -79,11 +78,11 @@ public class Sort {
             }
         }
 
-        LOGGER.info("{} {}",SUCCESS_SORT, sortArray);
-        return sortArray;
+        LOGGER.info("{} {}", SUCCESS_SORT, sortArray);
+        return new Array<>(sortArray);
     }
 
-    public Double[] shakerSort(Array<?> inputArray) {
+    public Array<?> shakerSort(Array<?> inputArray) {
         Double[] sortArray = Arrays.copyOf((Double[]) inputArray.getArray(), inputArray.getLength());
 
         boolean isSorted = false;
@@ -112,19 +111,19 @@ public class Sort {
             }
         }
 
-        LOGGER.info("{} {}",SUCCESS_SORT, sortArray);
-        return sortArray;
+        LOGGER.info("{} {}", SUCCESS_SORT, sortArray);
+        return new Array<>(sortArray);
     }
 
-    public Double[] shellSort(Array<?> inputArray) {
+    public Array<?> shellSort(Array<?> inputArray) {
         Double[] sortArray = Arrays.copyOf((Double[]) inputArray.getArray(), inputArray.getLength());
 
         int step = sortArray.length;
 
-        while(step != 1){
-            step =  step / 2;
+        while (step != 1) {
+            step = step / 2;
 
-            for(int i = 0; i + step < sortArray.length; i++) {
+            for (int i = 0; i + step < sortArray.length; i++) {
 
                 if (sortArray[i + step] < sortArray[i]) {
                     double tempValue = sortArray[i];
@@ -134,10 +133,10 @@ public class Sort {
             }
         }
 
-        for(int i = 1; i < sortArray.length; i++){
-            for(int j = i; j >= 0; j--){
+        for (int i = 1; i < sortArray.length; i++) {
+            for (int j = i; j >= 0; j--) {
 
-                if(sortArray[i] < sortArray[i - j]){
+                if (sortArray[i] < sortArray[i - j]) {
                     double tempValue = sortArray[i - j];
                     sortArray[i - j] = sortArray[i];
                     sortArray[i] = tempValue;
@@ -146,11 +145,11 @@ public class Sort {
             }
         }
 
-        LOGGER.info("{} {}",SUCCESS_SORT, sortArray);
-        return sortArray;
+        LOGGER.info("{} {}", SUCCESS_SORT, sortArray);
+        return new Array<>(sortArray);
     }
 
-    public Double[] hashSort(Array<?> inputArray) {
+    public Array<?> hashSort(Array<?> inputArray) {
         Map<Integer, ArrayList<Double>> map = new HashMap<>();
         Double[] sortArray = Arrays.copyOf((Double[]) inputArray.getArray(), inputArray.getLength());
 
@@ -193,8 +192,8 @@ public class Sort {
             }
         }
 
-        LOGGER.info("{} {}",SUCCESS_SORT, sortArray);
-        return sortArray;
+        LOGGER.info("{} {}", SUCCESS_SORT, sortArray);
+        return new Array<>(sortArray);
     }
 
 
@@ -286,7 +285,7 @@ public class Sort {
             pointerResultArray++;
         }
 
-        LOGGER.info("{} {}",SUCCESS_SORT, resultArray);
+        LOGGER.info("{} {}", SUCCESS_SORT, resultArray);
         return resultArray;
     }
 
@@ -307,9 +306,7 @@ public class Sort {
             }
         }
 
-        LOGGER.info("{} {}",SUCCESS_SORT, inputArray);
+        LOGGER.info("{} {}", SUCCESS_SORT, inputArray);
         return inputArray;
     }
-
-
 }

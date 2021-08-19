@@ -56,9 +56,8 @@ public class ConsolePrinter {
     }
 
     public void printResult(Object inputObject) {
-        System.out.println(inputObject.toString() + "\n");
+        System.out.println(messageManager.getString("result_info") + messageManager.getString(inputObject.toString()) + "\n");
     }
-
 
     public void printExitMessage() {
         System.out.println(messageManager.getString("exit_info"));

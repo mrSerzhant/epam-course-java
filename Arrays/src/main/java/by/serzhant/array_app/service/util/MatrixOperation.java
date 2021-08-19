@@ -2,8 +2,6 @@ package by.serzhant.array_app.service.util;
 
 import by.serzhant.array_app.entity.Matrix;
 
-import java.util.Arrays;
-
 public class MatrixOperation {
 
     public Matrix<?> sumMatrix(Matrix<?> inputFirstMatrix, Matrix<?> inputSecondMatrix) {

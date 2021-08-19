@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Validator {
     private static final Logger LOGGER = LogManager.getLogger(Validator.class);
-    private static final String ERROR_MESSAGE = "Incorrect Input Array";
+    private static final String ERROR_MESSAGE = "Incorrect Input Vaue";
 
     public boolean isValidArray(Array<?> inputArray) {
         if (inputArray == null || inputArray.getLength() == 0) {

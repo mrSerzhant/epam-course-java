@@ -1,6 +1,5 @@
 package by.serzhant.array_app.view;
 
-
 import by.serzhant.array_app.controller.CommandsFactory;
 import by.serzhant.array_app.service.command.Command;
 import by.serzhant.array_app.view.console_processing.ConsolePrinter;
