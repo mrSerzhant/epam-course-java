@@ -17,6 +17,10 @@ public class SelectionSort implements Command {
         this.array = array;
     }
 
+    /**
+     Класс содержит исполняющий метод для сортировки выбороом.
+     */
+
     @Override
     public Array<?> sort() throws SortException {
         if (!validator.isValidArray(array)) {

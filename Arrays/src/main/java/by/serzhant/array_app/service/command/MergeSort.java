@@ -5,9 +5,12 @@ import by.serzhant.array_app.service.exception.SortException;
 import by.serzhant.array_app.service.validator.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import sun.management.resources.agent;
 
 import java.util.Arrays;
+
+/**
+ Класс содержит исполняющий метод для сортировки бинарного слияния и вспомогательные к нему методы.
+ */
 
 public class MergeSort implements Command {
     private static final Logger LOGGER = LogManager.getLogger(MergeSort.class);
@@ -30,6 +33,8 @@ public class MergeSort implements Command {
             return array;
         }
 
+        //Делим исходный массив на 2 части и сортируем их
+
         Double[] firstPartSortArray = Arrays.copyOfRange((Double[]) array.getArray(), 0, array.getLength() / 2);
         Array<?> ar1 = new Array<>(firstPartSortArray);
         BubbleSort sortFirstPart = new BubbleSort(ar1);
@@ -46,6 +51,10 @@ public class MergeSort implements Command {
 
         return new Array<>(merge(sortArray, sortArray2));
     }
+
+    /**
+    Метод объединяет два отсортированных массива
+     */
 
     private Double[] merge(Double[] leftPartArray, Double[] rightPartArray) {
 

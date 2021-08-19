@@ -8,6 +8,10 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 
+/**
+ Класс содержит исполняющий метод для шейкер-сортировки.
+ */
+
 public class ShakerSort implements Command {
     private static final Logger LOGGER = LogManager.getLogger(ShakerSort.class);
     private Validator validator = new Validator();

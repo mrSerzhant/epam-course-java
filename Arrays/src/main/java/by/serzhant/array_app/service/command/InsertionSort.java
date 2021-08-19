@@ -8,6 +8,10 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 
+/**
+ Класс содержит исполняющий метод для сортировки вставкой.
+ */
+
 public class InsertionSort implements Command {
     private static final Logger LOGGER = LogManager.getLogger(InsertionSort.class);
     private Validator validator = new Validator();

@@ -8,6 +8,10 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 
+/**
+ Класс содержит исполняющий метод для сортировки методом Шелла.
+ */
+
 public class ShellSort implements Command {
     private static final Logger LOGGER = LogManager.getLogger(ShellSort.class);
     private Validator validator = new Validator();
@@ -46,7 +50,6 @@ public class ShellSort implements Command {
         }
 
         for(int i = 1; i < sortArray.length; i++){
-
             for(int j = i; j >= 0; j--){
 
                 if(sortArray[i] < sortArray[i - j]){

@@ -8,6 +8,10 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 
+/**
+ Класс содержит исполняющий метод для сортировки пузырьком.
+ */
+
 public class BubbleSort implements Command {
     private static final Logger LOGGER = LogManager.getLogger(BubbleSort.class);
     private Validator validator = new Validator();

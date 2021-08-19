@@ -1,8 +1,6 @@
 package by.serzhant.array_app.service;
 
 import by.serzhant.array_app.database.data_processing.DaoReader;
-import by.serzhant.array_app.service.command.Command;
-import by.serzhant.array_app.service.exception.SortException;
 import by.serzhant.array_app.service.validator.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

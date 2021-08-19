@@ -10,8 +10,7 @@ import java.util.Map;
 public class SortsFactory {
     private static final SortsFactory instance = new SortsFactory();
 
-    private Map<String, Command> allSorts = new HashMap<>();
-
+    private final Map<String, Command> allSorts = new HashMap<>();
 
     public SortsFactory() {
         ArrayBuilder arrayBuilder = new ArrayBuilder();
@@ -23,10 +22,8 @@ public class SortsFactory {
         allSorts.put("4", new InsertionSort(array));
         allSorts.put("5", new MergeSort(array));
         allSorts.put("6", new ShellSort(array));
+        allSorts.put("7", new HashSort(array));
         allSorts.put("invalidParam", new ExceptionCommand());
-        //
-        //  allCommands.put("22", new SwapNumeral());
-        //  allCommands.put("32", new FindPositiveSum());
     }
 
     public static SortsFactory getInstance() {

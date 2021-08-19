@@ -15,7 +15,7 @@ import org.apache.logging.log4j.Logger;
  */
 
 public class Menu {
-    private final static Logger LOGGER = LogManager.getLogger(Menu.class);
+    private static final Logger LOGGER = LogManager.getLogger(Menu.class);
 
     public Menu() {
         run();
@@ -27,10 +27,6 @@ public class Menu {
 
         ConsolePrinter consolePrinter = new ConsolePrinter(consoleReader.readInputValue());
         SortsFactory factory = SortsFactory.getInstance();
-
-
-
-
 
         while (true) {
             consolePrinter.printMenu();
@@ -45,8 +41,6 @@ public class Menu {
 
             Command command = factory.getCommand(inputValue);
             LOGGER.info("Выполнение программы № - {}", inputValue);
-
-
 
             try {
                 Array<?> c = command.sort();
