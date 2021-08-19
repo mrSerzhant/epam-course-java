@@ -5,14 +5,13 @@ import by.serzhant.array_app.entity.Matrix;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.List;
-
 public class Validator {
     private static final Logger LOGGER = LogManager.getLogger(Validator.class);
+    private static final String ERROR_MESSAGE = "Incorrect Input Array";
 
     public boolean isValidArray(Array<?> inputArray) {
         if (inputArray == null || inputArray.getLength() == 0) {
-            LOGGER.error("Incorrect Input Array");
+            LOGGER.error("{} {}", ERROR_MESSAGE, "Wrong Size");
             return false;
         }
 
@@ -21,7 +20,7 @@ public class Validator {
 
     public boolean isValidMatrix(Matrix<?> inputMatrix) {
         if (inputMatrix == null || inputMatrix.getRowLength() == 0) {
-            LOGGER.error("Incorrect Input Array");
+            LOGGER.error("Wrong Size Matrix");
             return false;
         }
 
@@ -39,14 +38,25 @@ public class Validator {
 
     public boolean isEqualMatrix(Matrix<?> firstMatrix, Matrix<?> secondMatrix) {
         if (firstMatrix.getRowLength() != secondMatrix.getRowLength()) {
+            LOGGER.error("{} {}", ERROR_MESSAGE, "isnot equals");
             return false;
         }
 
         for (int i = 0; i < firstMatrix.getRowLength(); i++) {
 
             if (firstMatrix.getMatrix()[i].length != secondMatrix.getMatrix()[i].length) {
+                LOGGER.error("{} {}", ERROR_MESSAGE, "isnot equals");
                 return false;
             }
+        }
+
+        return false;
+    }
+
+    public boolean isValidForMultiplication(Matrix<?> firstMatrix, Matrix<?> secondMatrix) {
+        if (firstMatrix.getMatrix()[0].length != secondMatrix.getMatrix().length) {
+            LOGGER.error("{} {}", ERROR_MESSAGE, "isnot equals size");
+            return false;
         }
 
         return true;

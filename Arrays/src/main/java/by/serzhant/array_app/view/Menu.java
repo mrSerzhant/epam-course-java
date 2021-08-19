@@ -1,8 +1,7 @@
 package by.serzhant.array_app.view;
 
 
-import by.serzhant.array_app.controller.SortsFactory;
-import by.serzhant.array_app.entity.Array;
+import by.serzhant.array_app.controller.CommandsFactory;
 import by.serzhant.array_app.service.command.Command;
 import by.serzhant.array_app.view.console_processing.ConsolePrinter;
 import by.serzhant.array_app.view.console_processing.ConsoleReader;
@@ -26,7 +25,7 @@ public class Menu {
         ConsolePrinter.printSetLanguageInfo();
 
         ConsolePrinter consolePrinter = new ConsolePrinter(consoleReader.readInputValue());
-        SortsFactory factory = SortsFactory.getInstance();
+        CommandsFactory factory = CommandsFactory.getInstance();
 
         while (true) {
             consolePrinter.printMenu();
@@ -49,40 +48,5 @@ public class Menu {
                 consolePrinter.printResult(e.getMessage());
             }
         }
-
-
-
-
-
-
-
-
-
-
-
     }
 }
-
-
-
-
-
-
-
-
-      /*  try {
-         Double d=    command.sort();
-        } catch (RuntimeException e) {
-            LOGGER.error("Неверный аргумент");
-            result = null;
-            // result = consolePrinter.getInvalidArgumentMessage();
-        }
-
-        System.out.println(result.toString());
-
-        //  consolePrinter.printResult(result);
-        //  LOGGER.info("Результат выполения - {}", result);
-    }
-}
-
-*/

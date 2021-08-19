@@ -2,7 +2,7 @@ package by.serzhant.array_app.entity;
 
 import java.util.Arrays;
 
-public class Matrix <T extends Number> {
+public class Matrix<T extends Number> {
     private T[][] matrix;
     private int row;
 
@@ -35,6 +35,5 @@ public class Matrix <T extends Number> {
     @Override
     public String toString() {
         return Arrays.deepToString(matrix);
-
     }
 }

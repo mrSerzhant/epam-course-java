@@ -6,17 +6,20 @@ import by.serzhant.array_app.service.ArrayBuilder;
 import by.serzhant.array_app.service.MatrixBuilder;
 import by.serzhant.array_app.service.command.*;
 import by.serzhant.array_app.service.util.MatrixOperation;
+import by.serzhant.array_app.service.util.Sort;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class SortsFactory {
-    private static final SortsFactory instance = new SortsFactory();
+public class CommandsFactory {
+    private static final CommandsFactory instance = new CommandsFactory();
 
     private final Map<String, Command> allCommands = new HashMap<>();
 
-    public SortsFactory() {
+    public CommandsFactory() {
         MatrixOperation matrixOperation = new MatrixOperation();
+        Sort sort = new Sort();
+
         ArrayBuilder arrayBuilder = new ArrayBuilder();
         Array<?> array = new Array<>(arrayBuilder.getArray());
 
@@ -28,19 +31,20 @@ public class SortsFactory {
         matrixBuilder.build("2");
         Matrix<?> secondMatrix = new Matrix<>(matrixBuilder.getMatrix());
 
-        allCommands.put("1", new BubbleSort(array));
-        allCommands.put("2", new ShakerSort(array));
-        allCommands.put("3", new SelectionSort(array));
-        allCommands.put("4", new InsertionSort(array));
-        allCommands.put("5", new MergeSort(array));
-        allCommands.put("6", new ShellSort(array));
-        allCommands.put("7", new HashSort(array));
+        allCommands.put("1", new BubbleSort(array, sort));
+        allCommands.put("2", new ShakerSort(array, sort));
+        allCommands.put("3", new SelectionSort(array, sort));
+        allCommands.put("4", new InsertionSort(array, sort));
+        allCommands.put("5", new MergeSort(array, sort));
+        allCommands.put("6", new ShellSort(array, sort));
+        allCommands.put("7", new HashSort(array, sort));
         allCommands.put("8", new SumMatrix(firstMatrix, secondMatrix, matrixOperation));
         allCommands.put("9", new SubtractMatrix(firstMatrix, secondMatrix, matrixOperation));
+        allCommands.put("10", new MultiMatrix(firstMatrix, secondMatrix, matrixOperation));
         allCommands.put("invalidParam", new ExceptionCommand());
     }
 
-    public static SortsFactory getInstance() {
+    public static CommandsFactory getInstance() {
         return instance;
     }
 

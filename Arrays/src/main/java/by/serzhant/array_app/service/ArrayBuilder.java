@@ -16,7 +16,6 @@ public class ArrayBuilder {
     }
 
     private Double[] build() {
-
         DaoReader reader = new DaoReader();
         List<String> stringList = reader.readDaoFile(DAO_PATH);
 
@@ -31,10 +30,9 @@ public class ArrayBuilder {
             }
         }
 
-        LOGGER.info("{} ", "SUCCESS BUILD");
+        LOGGER.info("{} {}", "SUCCESS BUILD", tempArray);
         return tempArray;
     }
-
 
     public Double[] getArray() {
         return array;

@@ -7,14 +7,14 @@ import by.serzhant.array_app.service.validator.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class SubtractMatrix implements Command {
-    private static final Logger LOGGER = LogManager.getLogger(SubtractMatrix.class);
+public class MultiMatrix implements Command {
+    private static final Logger LOGGER = LogManager.getLogger(MultiMatrix.class);
     private Validator validator = new Validator();
     private MatrixOperation matrixOperation;
     private Matrix<?> firstMatrix;
     private Matrix<?> secondMatrix;
 
-    public SubtractMatrix(Matrix<?> firstMatrix, Matrix<?> secondMatrix, MatrixOperation matrixOperation) {
+    public MultiMatrix(Matrix<?> firstMatrix, Matrix<?> secondMatrix, MatrixOperation matrixOperation) {
         this.matrixOperation = matrixOperation;
         this.firstMatrix = firstMatrix;
         this.secondMatrix = secondMatrix;
@@ -32,12 +32,12 @@ public class SubtractMatrix implements Command {
             throw new ExecuteException(Command.ERROR_MESSAGE);
         }
 
-        if (validator.isEqualMatrix(firstMatrix, secondMatrix)) {
-            LOGGER.error("Matrixs isnt equals");
+        if (!validator.isValidForMultiplication(firstMatrix, secondMatrix)) {
+            LOGGER.error("Matrixs invalid for multiplication");
             throw new ExecuteException(Command.ERROR_MESSAGE);
         }
 
         LOGGER.info(SUCCESS_EXECUTION_MESSAGE);
-        return matrixOperation.subtractMatrix(firstMatrix, secondMatrix);
+        return matrixOperation.multiplicationMatrix(firstMatrix, secondMatrix);
     }
 }

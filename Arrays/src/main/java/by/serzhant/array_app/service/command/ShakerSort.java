@@ -2,23 +2,24 @@ package by.serzhant.array_app.service.command;
 
 import by.serzhant.array_app.entity.Array;
 import by.serzhant.array_app.service.exception.ExecuteException;
+import by.serzhant.array_app.service.util.Sort;
 import by.serzhant.array_app.service.validator.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Arrays;
-
 /**
- Класс содержит исполняющий метод для шейкер-сортировки.
+ * Класс содержит исполняющий метод для шейкер-сортировки.
  */
 
 public class ShakerSort implements Command {
     private static final Logger LOGGER = LogManager.getLogger(ShakerSort.class);
     private Validator validator = new Validator();
     private Array<?> array;
+    private Sort sort;
 
-    public ShakerSort(Array<?> array) {
+    public ShakerSort(Array<?> array, Sort inputSort) {
         this.array = array;
+        this.sort = inputSort;
     }
 
     @Override
@@ -32,35 +33,7 @@ public class ShakerSort implements Command {
             return array;
         }
 
-        Double[] sortArray = Arrays.copyOf((Double[]) array.getArray(), array.getLength());
-
-        boolean isSorted = false;
-
-        while (!isSorted) {
-            isSorted = true;
-
-            for (int i = 1; i < array.getLength(); i++) {
-
-                if (sortArray[i] < sortArray[i - 1]) {
-                    double tempValue = sortArray[i];
-                    sortArray[i] = sortArray[i - 1];
-                    sortArray[i - 1] = tempValue;
-                    isSorted = false;
-                }
-            }
-
-            for (int i = array.getLength() - 2; i > 0; i--) {
-
-                if (sortArray[i] < sortArray[i - 1]) {
-                    double tempValue = sortArray[i];
-                    sortArray[i] = sortArray[i - 1];
-                    sortArray[i - 1] = tempValue;
-                    isSorted = false;
-                }
-            }
-        }
-
-        LOGGER.info(SUCCESS_SORT_MESSAGE);
-        return new Array<>(sortArray);
+        LOGGER.info(VALID_PARAM);
+        return sort.shakerSort(array);
     }
 }

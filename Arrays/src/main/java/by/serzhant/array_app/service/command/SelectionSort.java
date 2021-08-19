@@ -2,23 +2,24 @@ package by.serzhant.array_app.service.command;
 
 import by.serzhant.array_app.entity.Array;
 import by.serzhant.array_app.service.exception.ExecuteException;
+import by.serzhant.array_app.service.util.Sort;
 import by.serzhant.array_app.service.validator.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.util.Arrays;
 
 public class SelectionSort implements Command {
     private static final Logger LOGGER = LogManager.getLogger(SelectionSort.class);
     private Validator validator = new Validator();
     private Array<?> array;
+    private Sort sort;
 
-    public SelectionSort(Array<?> array) {
+    public SelectionSort(Array<?> array, Sort inputSort) {
         this.array = array;
+        this.sort = inputSort;
     }
 
     /**
-     Класс содержит исполняющий метод для сортировки выбороом.
+     * Класс содержит исполняющий метод для сортировки выбороом.
      */
 
     @Override
@@ -32,22 +33,7 @@ public class SelectionSort implements Command {
             return array;
         }
 
-        Double[] sortArray = Arrays.copyOf((Double[]) array.getArray(), array.getLength());
-
-        for (int i = 0; i < sortArray.length; i++) {
-            double minElement = sortArray[i];
-
-            for (int j = i + 1; j < sortArray.length; j++) {
-
-                if (sortArray[j] < minElement) {
-                    minElement = sortArray[j];
-                    sortArray[j] = sortArray[i];
-                    sortArray[i] = minElement;
-                }
-            }
-        }
-
-        LOGGER.info(SUCCESS_SORT_MESSAGE);
-        return new Array<>(sortArray);
+        LOGGER.info(VALID_PARAM);
+        return sort.selectionSort(array);
     }
 }
