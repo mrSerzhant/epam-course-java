@@ -18,6 +18,18 @@ public class Validator {
         return true;
     }
 
+    public boolean test(Matrix<?> firstMatrix, Matrix<?> secondMatrix){
+        return true;
+    }
+
+    public boolean test(String  s,String s2){
+        return true;
+    }
+
+    /**
+     * метод  проверяет размер и нерегулярность
+     */
+
     public boolean isValidMatrix(Matrix<?> inputMatrix) {
         if (inputMatrix == null || inputMatrix.getRowLength() == 0) {
             LOGGER.error("Wrong Size Matrix");
@@ -50,7 +62,7 @@ public class Validator {
             }
         }
 
-        return false;
+        return true;
     }
 
     public boolean isValidForMultiplication(Matrix<?> firstMatrix, Matrix<?> secondMatrix) {
