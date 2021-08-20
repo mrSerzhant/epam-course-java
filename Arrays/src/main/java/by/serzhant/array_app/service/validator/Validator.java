@@ -18,14 +18,6 @@ public class Validator {
         return true;
     }
 
-    public boolean test(Matrix<?> firstMatrix, Matrix<?> secondMatrix){
-        return true;
-    }
-
-    public boolean test(String  s,String s2){
-        return true;
-    }
-
     /**
      * метод  проверяет размер и нерегулярность
      */
