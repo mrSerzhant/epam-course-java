@@ -8,7 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- Класс содержит исполняющий метод для сортировки вставкой.
+ Класс содержит исполняющий метод для команды сортировка вставкой.
  */
 
 public class InsertionSort implements Command {

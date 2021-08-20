@@ -15,6 +15,10 @@ public class ArrayBuilder {
         array = build();
     }
 
+    /**
+     Данный метод собирает обьект из исходных данных
+     */
+
     private Double[] build() {
         DaoReader reader = new DaoReader();
         List<String> stringList = reader.readDaoFile(DAO_PATH);

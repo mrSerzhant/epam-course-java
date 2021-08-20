@@ -8,7 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * Класс содержит исполняющий метод для сортировки с вычислений hash адреса и вспомогательные к нему методы.
+ * Класс содержит исполняющий метод для команды сортировка с вычислений hash адреса.
  */
 
 public class HashSort implements Command {

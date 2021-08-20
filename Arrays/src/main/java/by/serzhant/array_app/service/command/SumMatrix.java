@@ -7,6 +7,10 @@ import by.serzhant.array_app.service.validator.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ Класс содержит исполняющий мето для команды суммирование матриц.
+ */
+
 public class SumMatrix implements Command{
     private static final Logger LOGGER = LogManager.getLogger(SumMatrix.class);
     private Validator validator = new Validator();

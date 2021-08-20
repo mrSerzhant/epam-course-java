@@ -8,7 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- Класс содержит исполняющий метод для сортировки бинарного слияния и вспомогательные к нему методы.
+ Класс содержит исполняющий метод для команды сортировка бинарного слияния.
  */
 
 public class MergeSort implements Command {

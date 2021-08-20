@@ -37,8 +37,8 @@ public class MatrixOperation {
     }
 
     public Matrix<?> multiplicationMatrix(Matrix<?> inputFirstMatrix, Matrix<?> inputSecondMatrix) {
-        int column = inputFirstMatrix.getRowLength();
-        int row = inputSecondMatrix.getMatrix()[0].length;
+        int column = inputSecondMatrix.getMatrix()[0].length;
+        int row = inputFirstMatrix.getRowLength();
 
         Double[][] newMatrix = new Double[row][column];
 

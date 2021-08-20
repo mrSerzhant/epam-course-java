@@ -7,6 +7,10 @@ import by.serzhant.array_app.service.validator.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Класс содержит исполняющий метод для команды сортировка выбороом.
+ */
+
 public class SelectionSort implements Command {
     private static final Logger LOGGER = LogManager.getLogger(SelectionSort.class);
     private Validator validator = new Validator();
@@ -17,10 +21,6 @@ public class SelectionSort implements Command {
         this.array = array;
         this.sort = inputSort;
     }
-
-    /**
-     * Класс содержит исполняющий метод для сортировки выбороом.
-     */
 
     @Override
     public Object execute() throws ExecuteException {

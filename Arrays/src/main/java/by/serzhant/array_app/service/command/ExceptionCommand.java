@@ -3,7 +3,7 @@ package by.serzhant.array_app.service.command;
 import by.serzhant.array_app.service.exception.ExecuteException;
 
 /**
- Класс содержит исполняющий метод, который создает ошибку в случае отсутствие коректной команды
+ Класс содержит исполняющий метод для команды ошибка выполнения
  */
 
 public class ExceptionCommand implements Command {

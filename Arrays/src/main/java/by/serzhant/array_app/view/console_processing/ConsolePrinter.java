@@ -16,6 +16,10 @@ public class ConsolePrinter {
 
     private MessageManager messageManager;
 
+    /**
+     Класс отвечает за выбор локали и вывода на экран информации в зависимости от вида локали
+     */
+
     public ConsolePrinter(String inputValue) {
 
         while (true) {
@@ -40,6 +44,11 @@ public class ConsolePrinter {
         System.out.println("Exit - 0");
     }
 
+
+    /**
+     Данный метод выводит меню в консоль
+     */
+
     public void printMenu() {
         System.out.println(messageManager.getString(BUBBLE_SORT));
         System.out.println(messageManager.getString(SHAKER_SORT));
@@ -55,9 +64,18 @@ public class ConsolePrinter {
         System.out.println(messageManager.getString("press_to_choice"));
     }
 
+
+    /**
+     Данный метод выводит результут выполнения программы в консоль
+     */
+
     public void printResult(Object inputObject) {
         System.out.println(messageManager.getString("result_info") + messageManager.getString(inputObject.toString()) + "\n");
     }
+
+    /**
+     Данный метод информация о завершении работы программы
+     */
 
     public void printExitMessage() {
         System.out.println(messageManager.getString("exit_info"));

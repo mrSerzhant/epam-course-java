@@ -8,7 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- Класс содержит исполняющий метод для сортировки пузырьком.
+ Класс содержит исполняющий метод для команды сортировка пузырьком.
  */
 
 public class BubbleSort implements Command {

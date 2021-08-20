@@ -12,6 +12,10 @@ public class MatrixBuilder {
     private static final String DAO_PATH_TWO = "./Arrays/src/main/java/by/serzhant/array_app/database/matrix/secondMatrix";
     private Double[][] matrix;
 
+    /**
+     Данный метод собирает обьект из исходных данных
+     */
+
     public void build(String pathWay) {
         DaoReader reader = new DaoReader();
 

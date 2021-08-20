@@ -7,6 +7,10 @@ import by.serzhant.array_app.service.validator.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ Класс содержит исполняющий метод для команды перемножение матриц
+ */
+
 public class MultiMatrix implements Command {
     private static final Logger LOGGER = LogManager.getLogger(MultiMatrix.class);
     private Validator validator = new Validator();

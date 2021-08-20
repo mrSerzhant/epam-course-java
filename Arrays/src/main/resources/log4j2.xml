@@ -16,7 +16,7 @@
             <AppenderRef ref="File"/>
         </Logger>
         <Root level="trace">
-            <AppenderRef ref="Console" level="error"/>
+            <AppenderRef ref="Console" level="off"/>
             <AppenderRef ref="File"/>
 
 

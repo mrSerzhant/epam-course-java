@@ -8,7 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- Класс содержит исполняющий метод для сортировки методом Шелла.
+ Класс содержит исполняющий метод для команды сортировка методом Шелла.
  */
 
 public class ShellSort implements Command {

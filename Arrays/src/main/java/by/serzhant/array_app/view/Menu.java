@@ -8,8 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * @author alexander
- * @version 1.0
+ Класс является связующим звеном между пользователем и внутренней системой программы
  */
 
 public class Menu {

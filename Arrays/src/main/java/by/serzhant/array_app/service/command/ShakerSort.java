@@ -8,7 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * Класс содержит исполняющий метод для шейкер-сортировки.
+ * Класс содержит исполняющий метод для команды шейкер-сортировка.
  */
 
 public class ShakerSort implements Command {
