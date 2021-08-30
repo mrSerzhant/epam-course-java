@@ -1,4 +1,4 @@
-package by.serzhant.uml.view.console_processing;
+package by.serzhant.uml.view.consoleprocessing;
 
 import java.io.BufferedReader;
 import java.io.IOException;

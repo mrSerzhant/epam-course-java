@@ -8,8 +8,8 @@ import java.util.List;
 
 public class MatrixBuilder {
     private static final Logger LOGGER = LogManager.getLogger(MatrixBuilder.class);
-    private static final String DAO_PATH_ONE = "./Arrays/src/main/java/by/serzhant/array_app/database/matrix/firstMatrix.txt";
-    private static final String DAO_PATH_TWO = "./Arrays/src/main/java/by/serzhant/array_app/database/matrix/secondMatrix.txt";
+    private static final String DAO_PATH_ONE = "./Arrays/src/main/java/resources/data/firstMatrix.txt";
+    private static final String DAO_PATH_TWO = "./Arrays/src/main/java/resources/data/secondMatrix.txt";
     private Double[][] matrix;
 
     /**

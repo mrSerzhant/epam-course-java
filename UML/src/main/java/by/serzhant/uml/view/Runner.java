@@ -1,29 +1,19 @@
 package by.serzhant.uml.view;
 
+import java.util.ArrayList;
+
 public class Runner {
 
     public static void main(String[] args) {
 
-        public String scopeExperiment() {
-            Foo fooIC = new Foo() {
-                String value = "Inner class value";
+        ArrayList<String> l = new ArrayList<>();
 
-                @Override
-                public String method(String string) {
-                    return this.value;
-                }
-            };
-            String resultIC = fooIC.method("");
+        l.add("2");
 
-            Foo fooLambda = parameter -> {
-                String value = "Lambda value";
-                return this.value;
-            };
-            String resultLambda = fooLambda.method("");
+        System.out.println(l.get(0));
 
-            return "Results: resultIC = " + resultIC +
-                    ", resultLambda = " + resultLambda;
-        }
+
+
 
 
     }

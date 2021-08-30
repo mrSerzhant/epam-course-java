@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ArrayBuilder {
     private static final Logger LOGGER = LogManager.getLogger(ArrayBuilder.class);
-    private static final String DAO_PATH = "./Arrays/src/main/java/by/serzhant/array_app/database/array.txt/array.txt";
+    private static final String DAO_PATH = "./Arrays/src/main/java/resources/data/array.txt";
     private Double[] array;
 
     public ArrayBuilder() {

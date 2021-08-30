@@ -8,7 +8,7 @@ public class Chassis {
     private int numberOfWheel;
 
     public Chassis(int numberOfWheel) {
-        tis.numberOfWheel = numberOfWheel;
+        this.numberOfWheel = numberOfWheel;
         this.chassis = new HashMap<>(numberOfWheel);
 
     }

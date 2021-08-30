@@ -1,9 +1,12 @@
 package by.serzhant.uml.controller;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 public class Controller {
     private final CommandProvider provider = new CommandProvider();
 
-    public Object executeTask(String request) {
+    public Object executeTask(Map<String, ArrayList<String>> request) {
         Object response;
 
         try {

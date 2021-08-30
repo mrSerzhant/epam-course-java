@@ -1,4 +1,4 @@
-package by.serzhant.uml.view.console_processing;
+package by.serzhant.uml.view.consoleprocessing;
 
 
 import by.serzhant.uml.view.locale.MessageManager;
@@ -72,6 +72,10 @@ public class ConsolePrinter {
 
     public void printResult(Object inputObject) {
         System.out.println(messageManager.getString("result_info") + messageManager.getString(inputObject.toString()) + "\n");
+    }
+
+    public void printInfoMessage(String inputString) {
+        System.out.println(messageManager.getString( messageManager.getString(inputString)));
     }
 
     /**
