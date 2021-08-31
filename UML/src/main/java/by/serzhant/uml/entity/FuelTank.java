@@ -35,6 +35,6 @@ public class FuelTank {
 
     @Override
     public String toString() {
-        return "fuel_capacity" + capacity;
+        return "fuel_capacity " + capacity;
     }
 }

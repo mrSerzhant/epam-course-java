@@ -12,7 +12,11 @@ import java.util.List;
 
 public class DataReader {
     private static final Logger LOGGER = LogManager.getLogger(DataReader.class);
-    private static final String DAO_PATH = "./Arrays/src/main/java/resources/data/secondMatrix.txt";
+    private static final String DAO_PATH = "./UML/src/main/resources/data/CarList";
+
+
+
+
 
     public List<String> readDaoFile() {
         Path path = Paths.get(DAO_PATH);

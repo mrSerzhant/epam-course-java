@@ -19,7 +19,7 @@ public class Validator {
             return true;
         }
 
-        LOGGER.info(ERROR_MESSAGE);
+        LOGGER.error(ERROR_MESSAGE);
         return false;
     }
 
@@ -32,6 +32,50 @@ public class Validator {
             return false;
         }
     }
+
+    public boolean isValidEnginePower(String inputValue){
+        try {
+           int powerValue =  Integer.parseInt(inputValue);
+            return powerValue > 0;
+        }catch (NumberFormatException e){
+            LOGGER.error("Invalid engine power");
+            return false;
+        }
+    }
+
+    public boolean isValidCountWheels(String inputValue){
+        try {
+            int countWheels =  Integer.parseInt(inputValue);
+
+            return countWheels > 0;
+        }catch (NumberFormatException e){
+            LOGGER.error("Invalid count of wheels");
+            return false;
+        }
+    }
+
+    public boolean isValidDiameterWheel(String inputValue){
+        try {
+            int diameter =  Integer.parseInt(inputValue);
+
+            return diameter > 0;
+        }catch (NumberFormatException e){
+            LOGGER.error("Invalid diameter of wheel");
+            return false;
+        }
+    }
+
+    public boolean isValidFuelCapacity(String inputValue){
+        try{
+            double fuelCapacity = Double.parseDouble(inputValue);
+            return fuelCapacity > -1;
+        }catch (NumberFormatException e ){
+            LOGGER.error("Invalid fuel capacity");
+            return false;
+        }
+
+    }
+
 
 
 }

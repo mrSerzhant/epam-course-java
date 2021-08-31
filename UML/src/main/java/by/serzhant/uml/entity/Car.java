@@ -3,14 +3,15 @@ package by.serzhant.uml.entity;
 import java.util.Objects;
 
 public abstract class Car {
-    private String brand;
+    private String type;
     private Engine engine;
     private Chassis chassis;
     private FuelTank fuelTank;
 
-    public Car(String brand, Engine engine, FuelTank fuelTank) {
-        this.brand = brand;
+    public Car(String type, Engine engine, Chassis chassis, FuelTank fuelTank) {
+        this.type = type;
         this.engine = engine;
+        this.chassis = chassis;
         this.fuelTank = fuelTank;
     }
 
@@ -33,7 +34,7 @@ public abstract class Car {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return Objects.equals(brand, car.brand) &&
+        return Objects.equals(type, car.type) &&
                 Objects.equals(engine, car.engine) &&
                 Objects.equals(chassis, car.chassis) &&
                 Objects.equals(fuelTank, car.fuelTank);
@@ -41,11 +42,11 @@ public abstract class Car {
 
     @Override
     public int hashCode() {
-        return Objects.hash(brand, engine, chassis, fuelTank);
+        return Objects.hash(type, engine, chassis, fuelTank);
     }
 
     @Override
     public String toString() {
-        return String.format(brand, fuelTank);
+        return fuelTank.toString();
     }
 }

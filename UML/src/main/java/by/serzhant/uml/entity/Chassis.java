@@ -5,12 +5,10 @@ import java.util.Map;
 
 public class Chassis {
     private Map<String, Wheel> chassis;
-    private int numberOfWheel;
 
-    public Chassis(int numberOfWheel) {
-        this.numberOfWheel = numberOfWheel;
-        this.chassis = new HashMap<>(numberOfWheel);
 
+    public Chassis(Map<String, Wheel> chassisMap) {
+        this.chassis = chassisMap;
     }
 
 

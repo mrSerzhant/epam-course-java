@@ -1,6 +1,7 @@
 package by.serzhant.uml.view.consoleprocessing;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 public class RequestController {
@@ -14,15 +15,13 @@ public class RequestController {
     public Map<String, ArrayList<String>> execute(String inputValue) {
         Map<String, ArrayList<String>> request;
 
-        request = provider.getCommand(inputValue).execute(inputValue, consolePrinter);
 
-
-
-   /*     try {
-            response =
+        try {
+            request = provider.getCommand(inputValue).execute(inputValue, consolePrinter);
         } catch (Exception e) {
-            response = e.getMessage();
-        }*/
+            request = new HashMap<>();
+            request.put(inputValue, new ArrayList<>());
+        }
 
         return request;
     }

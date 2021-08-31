@@ -1,5 +1,6 @@
 package by.serzhant.uml.view.consoleprocessing;
 
+import by.serzhant.uml.view.consoleprocessing.requestcommand.ExceptionCommand;
 import by.serzhant.uml.view.consoleprocessing.requestcommand.RequestChoice;
 import by.serzhant.uml.view.consoleprocessing.requestcommand.RequestCommand;
 import by.serzhant.uml.view.consoleprocessing.utils.Request;
@@ -12,14 +13,16 @@ public class RequestCommandProvider {
     private Request request = new Request();
 
     public RequestCommandProvider() {
-        allCommands.put("1", new RequestChoice());
-
+        allCommands.put("3", new RequestChoice());
+    //    allCommands.put("invalidParam", new ExceptionCommand());
     }
 
     public RequestCommand getCommand(String inputValue) {
         if (!allCommands.containsKey(inputValue)) {
             inputValue = "invalidParam";
+
         }
+
 
         return allCommands.get(inputValue);
     }
