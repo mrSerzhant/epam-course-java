@@ -10,9 +10,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataReader {
-    private static final Logger LOGGER = LogManager.getLogger(DataReader.class);
-    private static final String DAO_PATH = "./UML/src/main/resources/data/CarList";
+public class TempCarReader {
+    private static final Logger LOGGER = LogManager.getLogger(TempCarReader.class);
+    private static final String DAO_PATH = "./UML/src/main/resources/data/TempCar";
 
     public List<String> readDaoFile() {
         Path path = Paths.get(DAO_PATH);

@@ -1,8 +1,11 @@
 package by.serzhant.uml.entity;
 
+import by.serzhant.uml.entity.property.Movable;
+import by.serzhant.uml.entity.typecar.Sedan;
+
 import java.util.Objects;
 
-public abstract class Car {
+public abstract class Car implements Movable {
     private String type;
     private Engine engine;
     private Chassis chassis;
@@ -15,14 +18,16 @@ public abstract class Car {
         this.fuelTank = fuelTank;
     }
 
-    public String move() {
-        if (fuelTank.getCapacity() < 30) {
-            return "not enough capacity";
-        }
+    public String getType() {
+        return type;
+    }
 
-        fuelTank.setCapacity(fuelTank.getCapacity() - 30);
+    public Engine getEngine() {
+        return engine;
+    }
 
-        return "move";
+    public Chassis getChassis() {
+        return chassis;
     }
 
     public FuelTank getFuelTank() {
@@ -47,6 +52,6 @@ public abstract class Car {
 
     @Override
     public String toString() {
-        return type + ": " + engine + chassis + fuelTank;
+        return type + ": " + ((Sedan) this).getBrand() + " " + engine + chassis + fuelTank;
     }
 }

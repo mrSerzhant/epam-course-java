@@ -2,6 +2,7 @@ package by.serzhant.uml.service.command;
 
 import by.serzhant.uml.controller.CommandProvider;
 import by.serzhant.uml.dal.DataReader;
+import by.serzhant.uml.dal.DataWriter;
 import by.serzhant.uml.entity.Car;
 import by.serzhant.uml.service.exception.ExecuteException;
 import by.serzhant.uml.service.util.DataParser;
@@ -36,8 +37,11 @@ public class ChoiceCar implements Command {
         if (validator.isCorrectCarNumber(requestData.get(0), listCar)) {
             int numberCar = Integer.parseInt(requestData.get(0));
             Car car = listCar.get(numberCar - 1);
-
             LOGGER.info("{} {}", "Current Car", car);
+
+            DataWriter writer = new DataWriter();
+            writer.write(car);
+
             return car;
         }
 

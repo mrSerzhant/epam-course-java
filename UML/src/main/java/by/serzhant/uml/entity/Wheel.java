@@ -3,6 +3,16 @@ package by.serzhant.uml.entity;
 import java.util.Objects;
 
 public class Wheel {
+    private int diameter;
+
+    public Wheel(int diameter) {
+        this.diameter = diameter;
+    }
+
+    public int getDiameter() {
+        return diameter;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -14,12 +24,6 @@ public class Wheel {
     @Override
     public int hashCode() {
         return Objects.hash(diameter);
-    }
-
-    private int diameter;
-
-    public Wheel(int diameter) {
-        this.diameter = diameter;
     }
 
 

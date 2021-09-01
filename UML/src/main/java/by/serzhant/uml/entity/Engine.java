@@ -9,6 +9,14 @@ public class Engine {
         this.power = power;
     }
 
+    public String getBrand() {
+        return brand;
+    }
+
+    public int getPower() {
+        return power;
+    }
+
     @Override
     public String toString() {
         return String.format("engine: brand - %s, power - %d, ", brand, power);

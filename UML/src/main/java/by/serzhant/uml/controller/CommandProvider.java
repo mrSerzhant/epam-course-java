@@ -14,8 +14,8 @@ public class CommandProvider {
         ;
         allCommands.put("1", new GetListCar());
         allCommands.put("2", new ChoiceCar());
-      /*  allCommands.put("2", new Move(car));
-        allCommands.put("3", new GetInfo(car));
+        allCommands.put("3", new Move());
+     /*   allCommands.put("3", new GetInfo(car));
         allCommands.put("invalidParam", new ExceptionCommand());*/
     }
 

@@ -1,6 +1,5 @@
 package by.serzhant.uml.entity;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
@@ -10,7 +9,15 @@ public class Chassis {
 
     public Chassis(Map<String, Wheel> chassisMap) {
         this.chassis = chassisMap;
-        this.countWheels = Integer.parseInt((String)chassisMap.keySet().toArray()[0]);
+        this.countWheels = chassisMap.size();
+    }
+
+    public int getCountWheels() {
+        return countWheels;
+    }
+
+    public Map<String, Wheel> getChassis() {
+        return chassis;
     }
 
     @Override
@@ -36,7 +43,7 @@ public class Chassis {
             int numberWheel = Integer.parseInt(entry.getKey()) + 1;
 
 
-            stringBuilder.append("number_wheel -" + numberWheel + " : " +  entry.getValue().toString());
+            stringBuilder.append("number_wheel -").append(numberWheel).append(" : ").append(entry.getValue().toString());
         }
 
         return stringBuilder.toString();
