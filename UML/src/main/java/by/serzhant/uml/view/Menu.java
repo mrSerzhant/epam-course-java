@@ -36,7 +36,7 @@ public class Menu {
 
             String inputValue = consoleReader.readInputValue();
 
-            if (inputValue.equals("0")) {
+            if (inputValue.equals("0") || inputValue.isEmpty()) {
                 consolePrinter.printExitMessage();
                 LOGGER.info("Завершение работы");
                 return;

@@ -47,6 +47,6 @@ public abstract class Car {
 
     @Override
     public String toString() {
-        return fuelTank.toString();
+        return type + ": " + engine + chassis + fuelTank;
     }
 }

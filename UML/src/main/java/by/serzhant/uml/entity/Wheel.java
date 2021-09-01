@@ -25,6 +25,6 @@ public class Wheel {
 
     @Override
     public String toString() {
-        return "wheel_diameter" + diameter;
+        return String.format("wheel_diameter: %d, ", diameter);
     }
 }

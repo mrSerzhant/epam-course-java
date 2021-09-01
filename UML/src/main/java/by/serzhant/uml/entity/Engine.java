@@ -8,4 +8,9 @@ public class Engine {
         this.brand = brand;
         this.power = power;
     }
+
+    @Override
+    public String toString() {
+        return String.format("engine: brand - %s, power - %d, ", brand, power);
+    }
 }

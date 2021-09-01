@@ -17,7 +17,9 @@ public class GetListCar implements Command {
         DataParser dataParser = new DataParser();
         List<Car> listCar = dataParser.parse(stringList);
 
-
+        if(listCar.isEmpty()){
+            return "list_is_empty";
+        }
 
         return listCar;
     }

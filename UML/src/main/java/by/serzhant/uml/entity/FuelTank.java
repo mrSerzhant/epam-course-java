@@ -5,9 +5,6 @@ import java.util.Objects;
 public class FuelTank {
     private double capacity;
 
-    public FuelTank() {
-    }
-
     public FuelTank(double capacity) {
         this.capacity = capacity;
     }
@@ -35,6 +32,6 @@ public class FuelTank {
 
     @Override
     public String toString() {
-        return "fuel_capacity " + capacity;
+        return "fuel_capacity: " + capacity;
     }
 }
