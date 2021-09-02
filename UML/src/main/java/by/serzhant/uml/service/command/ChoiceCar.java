@@ -19,7 +19,7 @@ public class ChoiceCar implements Command {
     private Validator validator = new Validator();
 
     @Override
-    public Object execute() throws ExecuteException {
+    public Object execute() {
         Map<String, ArrayList<String>> request = CommandProvider.userRequest;
         Object key = request.keySet().toArray()[0];
 

@@ -10,7 +10,7 @@ public class CommandProvider {
     private final Map<String, Command> allCommands = new HashMap<>();
     public static Map<String, ArrayList<String>> userRequest;
 
-    public CommandProvider(){
+    public CommandProvider() {
         allCommands.put("1", new GetListCar());
         allCommands.put("2", new ChoiceCar());
         allCommands.put("3", new Move());
@@ -20,7 +20,7 @@ public class CommandProvider {
     }
 
     public Command getCommand(Map<String, ArrayList<String>> inputData) {
-        String commandName = (String)inputData.keySet().toArray()[0];
+        String commandName = (String) inputData.keySet().toArray()[0];
 
         if (!allCommands.containsKey(commandName)) {
             return allCommands.get("invalidParam");
@@ -30,5 +30,4 @@ public class CommandProvider {
 
         return allCommands.get(commandName);
     }
-
 }

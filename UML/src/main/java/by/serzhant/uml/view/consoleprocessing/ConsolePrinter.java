@@ -1,6 +1,5 @@
 package by.serzhant.uml.view.consoleprocessing;
 
-
 import by.serzhant.uml.entity.Car;
 import by.serzhant.uml.view.locale.MessageManager;
 
@@ -43,7 +42,6 @@ public class ConsolePrinter {
         System.out.println("Exit - 0");
     }
 
-
     /**
      * Данный метод выводит меню в консоль
      */
@@ -75,8 +73,6 @@ public class ConsolePrinter {
         } else {
             System.out.println(messageManager.getString("result_info") + messageManager.getString(inputObject.toString()) + "\n");
         }
-
-
     }
 
     public void printInfoMessage(String inputString) {

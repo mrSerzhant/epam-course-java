@@ -58,7 +58,7 @@ public class DataParser {
 
                 if (!validator.isValidFuelCapacity(tempData.get(6))) {
                     fuelCapacity = 0;
-                }else{
+                } else {
                     fuelCapacity = Integer.parseInt(tempData.get(6));
                 }
 

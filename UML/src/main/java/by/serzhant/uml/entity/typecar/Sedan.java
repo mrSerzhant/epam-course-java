@@ -10,7 +10,7 @@ import java.util.Objects;
 public class Sedan extends Car {
     private String brand;
 
-    public Sedan(String brand, Engine engine, Chassis chassis, FuelTank fuelTank){
+    public Sedan(String brand, Engine engine, Chassis chassis, FuelTank fuelTank) {
         super("sedan", engine, chassis, fuelTank);
         this.brand = brand;
     }
@@ -29,7 +29,7 @@ public class Sedan extends Car {
 
         super.getFuelTank().setCapacity(fuelCapacity - 30);
 
-        return String.format("move - %d capacity", super.getFuelTank().getCapacity());
+        return "move";
     }
 
     @Override
@@ -45,5 +45,4 @@ public class Sedan extends Car {
     public int hashCode() {
         return Objects.hash(super.hashCode(), brand);
     }
-
 }

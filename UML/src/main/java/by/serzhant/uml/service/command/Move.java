@@ -2,7 +2,6 @@ package by.serzhant.uml.service.command;
 
 import by.serzhant.uml.dal.DataReader;
 import by.serzhant.uml.dal.DataWriter;
-import by.serzhant.uml.dal.TempCarReader;
 import by.serzhant.uml.entity.Car;
 import by.serzhant.uml.service.util.DataParser;
 import by.serzhant.uml.service.validator.Validator;

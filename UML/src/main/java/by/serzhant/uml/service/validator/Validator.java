@@ -6,8 +6,6 @@ import by.serzhant.uml.entity.typecar.Sedan;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -27,7 +25,6 @@ public class Validator {
         LOGGER.error(ERROR_MESSAGE);
         return false;
     }
-
 
     private boolean isNumeral(String inputString) {
         try {
@@ -94,6 +91,4 @@ public class Validator {
 
         return false;
     }
-
-
 }

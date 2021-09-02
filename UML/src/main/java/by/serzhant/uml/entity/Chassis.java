@@ -20,14 +20,10 @@ public class Chassis {
         return chassis;
     }
 
-
     public void addWheel(String position, Wheel wheel) {
-
         chassis.put(position, wheel);
-
-
+        countWheels = chassis.size();
     }
-
 
     @Override
     public boolean equals(Object o) {
