@@ -21,7 +21,7 @@ public class Sedan extends Car {
 
     @Override
     public String move() {
-        double fuelCapacity = super.getFuelTank().getCapacity();
+        int fuelCapacity = super.getFuelTank().getCapacity();
 
         if (fuelCapacity < 30) {
             return "not_enough_capacity";
@@ -29,7 +29,7 @@ public class Sedan extends Car {
 
         super.getFuelTank().setCapacity(fuelCapacity - 30);
 
-        return String.format("move - %f capacity", super.getFuelTank().getCapacity());
+        return String.format("move - %d capacity", super.getFuelTank().getCapacity());
     }
 
     @Override

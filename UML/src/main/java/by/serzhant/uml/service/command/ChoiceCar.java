@@ -18,9 +18,6 @@ public class ChoiceCar implements Command {
     private static final Logger LOGGER = LogManager.getLogger(ChoiceCar.class);
     private Validator validator = new Validator();
 
-    public ChoiceCar() {
-    }
-
     @Override
     public Object execute() throws ExecuteException {
         Map<String, ArrayList<String>> request = CommandProvider.userRequest;
@@ -29,7 +26,7 @@ public class ChoiceCar implements Command {
         List<String> requestData = request.get(key);
 
         DataReader reader = new DataReader();
-        List<String> stringList = reader.readDaoFile();
+        List<String> stringList = reader.readDataFile();
 
         DataParser dataParser = new DataParser();
         List<Car> listCar = dataParser.parse(stringList);
@@ -40,7 +37,7 @@ public class ChoiceCar implements Command {
             LOGGER.info("{} {}", "Current Car", car);
 
             DataWriter writer = new DataWriter();
-            writer.write(car);
+            writer.writeTempData(car);
 
             return car;
         }

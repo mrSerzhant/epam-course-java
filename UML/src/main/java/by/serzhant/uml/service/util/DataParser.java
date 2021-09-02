@@ -24,7 +24,7 @@ public class DataParser {
             int enginePower;
             int countWheels;
             int diameterWheel;
-            double fuelCapacity;
+            int fuelCapacity;
 
             if (tempData.get(0).equals("sedan")) {
                 brand = tempData.get(1);
@@ -59,7 +59,7 @@ public class DataParser {
                 if (!validator.isValidFuelCapacity(tempData.get(6))) {
                     fuelCapacity = 0;
                 }else{
-                    fuelCapacity = Double.parseDouble(tempData.get(6));
+                    fuelCapacity = Integer.parseInt(tempData.get(6));
                 }
 
                 Map<String, Wheel> chassisMap = new HashMap<>();

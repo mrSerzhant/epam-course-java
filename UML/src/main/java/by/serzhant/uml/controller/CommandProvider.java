@@ -11,12 +11,12 @@ public class CommandProvider {
     public static Map<String, ArrayList<String>> userRequest;
 
     public CommandProvider(){
-        ;
         allCommands.put("1", new GetListCar());
         allCommands.put("2", new ChoiceCar());
         allCommands.put("3", new Move());
-     /*   allCommands.put("3", new GetInfo(car));
-        allCommands.put("invalidParam", new ExceptionCommand());*/
+        allCommands.put("4", new AddFuel());
+        allCommands.put("5", new AddWheel());
+        allCommands.put("invalidParam", new ExceptionCommand());
     }
 
     public Command getCommand(Map<String, ArrayList<String>> inputData) {

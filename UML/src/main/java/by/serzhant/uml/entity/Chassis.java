@@ -20,6 +20,15 @@ public class Chassis {
         return chassis;
     }
 
+
+    public void addWheel(String position, Wheel wheel) {
+
+        chassis.put(position, wheel);
+
+
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

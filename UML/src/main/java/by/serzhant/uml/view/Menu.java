@@ -7,10 +7,6 @@ import by.serzhant.uml.view.consoleprocessing.RequestController;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Класс является связующим звеном между пользователем и внутренней системой программы
  */

@@ -13,9 +13,22 @@ import java.util.List;
 public class DataReader {
     private static final Logger LOGGER = LogManager.getLogger(DataReader.class);
     private static final String DAO_PATH = "./UML/src/main/resources/data/CarList";
+    private static final String TEMP_DAO_PATH = "./UML/src/main/resources/data/TempCar";
 
-    public List<String> readDaoFile() {
+    public List<String> readDataFile() {
         Path path = Paths.get(DAO_PATH);
+
+        try {
+            LOGGER.info("Чтение из базы данных");
+            return Files.readAllLines(path);
+        } catch (IOException e) {
+            LOGGER.error("Ошибка при чтении из базы данных");
+            return new ArrayList<>();
+        }
+    }
+
+    public List<String> readTempDataFile() {
+        Path path = Paths.get(TEMP_DAO_PATH);
 
         try {
             LOGGER.info("Чтение из базы данных");

@@ -3,17 +3,17 @@ package by.serzhant.uml.entity;
 import java.util.Objects;
 
 public class FuelTank {
-    private double capacity;
+    private int capacity;
 
-    public FuelTank(double capacity) {
+    public FuelTank(int capacity) {
         this.capacity = capacity;
     }
 
-    public double getCapacity() {
+    public int getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(double capacity) {
+    public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
 
@@ -22,7 +22,7 @@ public class FuelTank {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         FuelTank fuelTank = (FuelTank) o;
-        return Double.compare(fuelTank.capacity, capacity) == 0;
+        return capacity == fuelTank.capacity;
     }
 
     @Override

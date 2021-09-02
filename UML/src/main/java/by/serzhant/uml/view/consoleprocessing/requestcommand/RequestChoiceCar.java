@@ -6,7 +6,7 @@ import by.serzhant.uml.view.consoleprocessing.utils.Request;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class RequestChoice implements RequestCommand{
+public class RequestChoiceCar implements RequestCommand{
 
     @Override
     public Map<String, ArrayList<String>> execute(String nameCommand, ConsolePrinter consolePrinter) {

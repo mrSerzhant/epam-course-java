@@ -14,7 +14,7 @@ public class TempCarReader {
     private static final Logger LOGGER = LogManager.getLogger(TempCarReader.class);
     private static final String DAO_PATH = "./UML/src/main/resources/data/TempCar";
 
-    public List<String> readDaoFile() {
+    public List<String> readaoFile() {
         Path path = Paths.get(DAO_PATH);
 
         try {

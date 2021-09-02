@@ -5,7 +5,8 @@ import by.serzhant.uml.dal.DataReader;
 import by.serzhant.uml.dal.DataWriter;
 import by.serzhant.uml.dal.TempCarReader;
 import by.serzhant.uml.entity.Car;
-
+import by.serzhant.uml.entity.Wheel;
+import by.serzhant.uml.service.exception.ExecuteException;
 import by.serzhant.uml.service.util.DataParser;
 import by.serzhant.uml.service.validator.Validator;
 
@@ -13,12 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-
-public class AddFuel implements Command {
+public class AddWheel implements Command {
     private Validator validator = new Validator();
 
     @Override
-    public Object execute() {
+    public Object execute() throws ExecuteException {
         DataReader dataReader = new DataReader();
         List<String> listTempCar = dataReader.readTempDataFile();
 
@@ -30,18 +30,26 @@ public class AddFuel implements Command {
         }
 
         Car car = listCar.get(0);
-        int currentCapacity = car.getFuelTank().getCapacity();
+        int countWheels = car.getChassis().getCountWheels();
+
+
+        if (validator.isMovableCar(car)) {
+            return "enough_wheels";
+        }
 
         Map<String, ArrayList<String>> request = CommandProvider.userRequest;
         Object key = request.keySet().toArray()[0];
+
         List<String> requestData = request.get(key);
 
-        if (!validator.isValidFuelCapacity(key.toString())) {
-            return "invalid_fuel_amount";
+        String wheelDiameter = requestData.get(0);
+
+        if (!validator.isValidDiameterWheel(wheelDiameter)) {
+            return "invalid_wheel_diameter";
         }
 
-        int inputFuelCapacity = Integer.parseInt(requestData.get(0));
-        car.getFuelTank().setCapacity(currentCapacity + inputFuelCapacity);
+        Wheel wheel = new Wheel(Integer.parseInt(wheelDiameter));
+        car.getChassis().addWheel(String.valueOf(countWheels), wheel);
 
         List<String> listAllCar = dataReader.readDataFile();
 
@@ -49,6 +57,6 @@ public class AddFuel implements Command {
         writer.writeTempData(car);
         writer.reWriteData(listTempCar, listAllCar, car);
 
-        return "add " + inputFuelCapacity + " " + car;
+        return "wheel add " + car;
     }
 }

@@ -10,6 +10,8 @@ public class ConsolePrinter {
     private static final String ALL_INFO = "all_info";
     private static final String SELECTION_CAR = "selection_car";
     private static final String MOVE = "move";
+    private static final String ADD_FUEL = "add_fuel";
+    private static final String ADD_WHEEL = "add_wheel";
 
     private MessageManager messageManager;
 
@@ -50,6 +52,8 @@ public class ConsolePrinter {
         System.out.println("1 -" + messageManager.getString(ALL_INFO));
         System.out.println("2 -" + messageManager.getString(SELECTION_CAR));
         System.out.println("3 -" + messageManager.getString(MOVE));
+        System.out.println("4 -" + messageManager.getString(ADD_FUEL));
+        System.out.println("5 -" + messageManager.getString(ADD_WHEEL));
 
         System.out.println(messageManager.getString("press_to_exit") + "\n");
         System.out.println(messageManager.getString("press_to_choice"));
