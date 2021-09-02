@@ -29,6 +29,7 @@ public class AddFuel implements Command {
         }
 
         Car car = listCar.get(0);
+
         int currentCapacity = car.getFuelTank().getCapacity();
 
         Map<String, ArrayList<String>> request = CommandProvider.userRequest;

@@ -1,4 +1,6 @@
-package by.serzhant.uml.view.consoleprocessing;
+package by.serzhant.uml.view.consoleprocessing.requestcontroller;
+
+import by.serzhant.uml.view.consoleprocessing.ConsolePrinter;
 
 import java.util.ArrayList;
 import java.util.HashMap;

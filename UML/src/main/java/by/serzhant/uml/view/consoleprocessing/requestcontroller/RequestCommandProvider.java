@@ -1,4 +1,4 @@
-package by.serzhant.uml.view.consoleprocessing;
+package by.serzhant.uml.view.consoleprocessing.requestcontroller;
 
 import by.serzhant.uml.view.consoleprocessing.requestcommand.RequestChoiceCar;
 import by.serzhant.uml.view.consoleprocessing.requestcommand.RequestCommand;
@@ -18,9 +18,6 @@ public class RequestCommandProvider {
     }
 
     public RequestCommand getCommand(String inputValue) {
-        if (!allCommands.containsKey(inputValue)) {
-            inputValue = "invalidParam";
-        }
 
         return allCommands.get(inputValue);
     }

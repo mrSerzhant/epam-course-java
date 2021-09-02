@@ -45,4 +45,9 @@ public class Sedan extends Car {
     public int hashCode() {
         return Objects.hash(super.hashCode(), brand);
     }
+
+    @Override
+    public String toString() {
+        return super.getType() + ": " + brand + " " + super.getEngine() + super.getChassis() + super.getFuelTank();
+    }
 }

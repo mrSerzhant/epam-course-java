@@ -3,7 +3,7 @@ package by.serzhant.uml.view;
 import by.serzhant.uml.controller.Controller;
 import by.serzhant.uml.view.consoleprocessing.ConsolePrinter;
 import by.serzhant.uml.view.consoleprocessing.ConsoleReader;
-import by.serzhant.uml.view.consoleprocessing.RequestController;
+import by.serzhant.uml.view.consoleprocessing.requestcontroller.RequestController;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

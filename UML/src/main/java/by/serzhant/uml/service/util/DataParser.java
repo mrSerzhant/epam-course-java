@@ -10,9 +10,10 @@ import java.util.*;
 
 public class DataParser {
     private static final Logger LOGGER = LogManager.getLogger(DataParser.class);
-    private Validator validator = new Validator();
 
     public List<Car> parse(List<String> inputList) {
+        Validator validator = new Validator();
+
         List<Car> listCar = new ArrayList<>();
         List<String> tempData;
 

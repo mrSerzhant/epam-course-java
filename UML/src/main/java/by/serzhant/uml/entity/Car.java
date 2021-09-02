@@ -52,6 +52,6 @@ public abstract class Car implements Movable {
 
     @Override
     public String toString() {
-        return type + ": " + ((Sedan) this).getBrand() + " " + engine + chassis + fuelTank;
+        return type;
     }
 }
