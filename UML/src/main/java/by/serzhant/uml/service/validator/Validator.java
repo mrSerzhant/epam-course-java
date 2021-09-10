@@ -26,15 +26,6 @@ public class Validator {
         return false;
     }
 
-    private boolean isNumeral(String inputString) {
-        try {
-            Integer.parseInt(inputString);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
-
     public boolean isValidEnginePower(String inputValue) {
         try {
             int powerValue = Integer.parseInt(inputValue);
@@ -49,7 +40,7 @@ public class Validator {
         try {
             int countWheels = Integer.parseInt(inputValue);
 
-            return countWheels > 0;
+            return countWheels >= 0;
         } catch (NumberFormatException e) {
             LOGGER.error("Invalid count of wheels");
             return false;
@@ -90,5 +81,14 @@ public class Validator {
         }
 
         return false;
+    }
+
+    private boolean isNumeral(String inputString) {
+        try {
+            Integer.parseInt(inputString);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 }

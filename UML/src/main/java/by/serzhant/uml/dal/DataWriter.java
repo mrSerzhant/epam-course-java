@@ -19,23 +19,10 @@ public class DataWriter {
     private static final String DAO_PATH = "./UML/src/main/resources/data/CarList";
 
     public void writeTempData(Car inputCar) {
-        StringBuilder stringBuilder = new StringBuilder();
-
-        stringBuilder.append(inputCar.getType()).append(" ");
-
-        if (inputCar instanceof Sedan) {
-            stringBuilder.append(((Sedan) inputCar).getBrand()).append(" ");
-        }
-
-        stringBuilder.append(inputCar.getEngine().getBrand()).append(" ");
-        stringBuilder.append(inputCar.getEngine().getPower()).append(" ");
-
-        stringBuilder.append(inputCar.getChassis().getCountWheels()).append(" ");
-        stringBuilder.append(inputCar.getChassis().getChassis().get("1").getDiameter()).append(" ");
-        stringBuilder.append(inputCar.getFuelTank().getCapacity());
+        String dataString = buildString(inputCar);
 
         try (FileWriter writer = new FileWriter(TEMP_DAO_PATH)) {
-            writer.write(stringBuilder.toString());
+            writer.write(dataString);
             writer.flush();
             LOGGER.info("Успешная запись в файл");
         } catch (IOException ex) {
@@ -43,7 +30,7 @@ public class DataWriter {
         }
     }
 
-    public void reWriteData(List<String> listTempCar, List<String> listAllCar, Car tempCar) {
+    public void writeData(List<String> listTempCar, List<String> listAllCar, Car tempCar) {
         List<String> newCarList = new ArrayList<>();
 
         for (int i = 0; i < listAllCar.size(); i++) {
@@ -84,6 +71,4 @@ public class DataWriter {
 
         return stringBuilder.toString();
     }
-
-
 }

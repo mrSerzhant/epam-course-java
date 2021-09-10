@@ -2,7 +2,6 @@ package by.serzhant.uml.service.command;
 
 import by.serzhant.uml.dal.DataReader;
 import by.serzhant.uml.entity.Car;
-import by.serzhant.uml.service.exception.ExecuteException;
 import by.serzhant.uml.service.util.DataParser;
 
 import java.util.List;

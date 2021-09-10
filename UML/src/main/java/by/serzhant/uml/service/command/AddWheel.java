@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 public class AddWheel implements Command {
-    private Validator validator = new Validator();
+
 
     @Override
     public Object execute() {
@@ -23,6 +23,8 @@ public class AddWheel implements Command {
 
         DataParser dataParser = new DataParser();
         List<Car> listCar = dataParser.parse(listTempCar);
+
+        Validator validator = new Validator();
 
         if (!validator.isValidData(listCar)) {
             return "select_car";
@@ -54,7 +56,7 @@ public class AddWheel implements Command {
 
         DataWriter writer = new DataWriter();
         writer.writeTempData(car);
-        writer.reWriteData(listTempCar, listAllCar, car);
+        writer.writeData(listTempCar, listAllCar, car);
 
         return "wheel add " + car;
     }

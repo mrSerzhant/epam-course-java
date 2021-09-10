@@ -1,5 +1,7 @@
 package by.serzhant.uml.entity;
 
+import java.util.Objects;
+
 public class Engine {
     private String brand;
     private int power;
@@ -15,6 +17,20 @@ public class Engine {
 
     public int getPower() {
         return power;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Engine engine = (Engine) o;
+        return power == engine.power && Objects.equals(brand, engine.brand);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, power);
     }
 
     @Override

@@ -4,7 +4,6 @@ import by.serzhant.uml.controller.CommandProvider;
 import by.serzhant.uml.dal.DataReader;
 import by.serzhant.uml.dal.DataWriter;
 import by.serzhant.uml.entity.Car;
-import by.serzhant.uml.service.exception.ExecuteException;
 import by.serzhant.uml.service.util.DataParser;
 import by.serzhant.uml.service.validator.Validator;
 import org.apache.logging.log4j.LogManager;
@@ -16,7 +15,6 @@ import java.util.Map;
 
 public class ChoiceCar implements Command {
     private static final Logger LOGGER = LogManager.getLogger(ChoiceCar.class);
-    private Validator validator = new Validator();
 
     @Override
     public Object execute() {
@@ -30,6 +28,8 @@ public class ChoiceCar implements Command {
 
         DataParser dataParser = new DataParser();
         List<Car> listCar = dataParser.parse(stringList);
+
+        Validator validator = new Validator();
 
         if (validator.isCorrectCarNumber(requestData.get(0), listCar)) {
             int numberCar = Integer.parseInt(requestData.get(0));

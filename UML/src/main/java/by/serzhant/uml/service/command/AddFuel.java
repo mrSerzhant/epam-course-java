@@ -14,7 +14,6 @@ import java.util.Map;
 
 
 public class AddFuel implements Command {
-    private Validator validator = new Validator();
 
     @Override
     public Object execute() {
@@ -23,6 +22,8 @@ public class AddFuel implements Command {
 
         DataParser dataParser = new DataParser();
         List<Car> listCar = dataParser.parse(listTempCar);
+
+        Validator validator = new Validator();
 
         if (!validator.isValidData(listCar)) {
             return "select_car";
@@ -47,7 +48,7 @@ public class AddFuel implements Command {
 
         DataWriter writer = new DataWriter();
         writer.writeTempData(car);
-        writer.reWriteData(listTempCar, listAllCar, car);
+        writer.writeData(listTempCar, listAllCar, car);
 
         return "add " + inputFuelCapacity + " " + car;
     }

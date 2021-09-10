@@ -9,14 +9,16 @@ import by.serzhant.uml.service.validator.Validator;
 import java.util.List;
 
 public class Move implements Command {
-    private Validator validator = new Validator();
 
     @Override
     public Object execute() {
         DataReader dataReader = new DataReader();
         List<String> listTempCar = dataReader.readTempDataFile();
+
         DataParser dataParser = new DataParser();
         List<Car> listCar = dataParser.parse(listTempCar);
+
+        Validator validator = new Validator();
 
         if (!validator.isValidData(listCar)) {
             return "select_car";
@@ -34,7 +36,7 @@ public class Move implements Command {
 
         DataWriter writer = new DataWriter();
         writer.writeTempData(car);
-        writer.reWriteData(listTempCar, listAllCar, car);
+        writer.writeData(listTempCar, listAllCar, car);
 
         return response + " " + car;
     }
