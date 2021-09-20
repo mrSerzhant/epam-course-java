@@ -29,7 +29,7 @@ public class Matrix {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Matrix matrix1 = (Matrix) o;
-        return row == matrix1.row && Arrays.equals(matrix, matrix1.matrix);
+        return row == matrix1.row && Arrays.deepEquals(matrix, matrix1.matrix);
     }
 
     @Override

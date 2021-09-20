@@ -6,7 +6,6 @@ public class ConsolePrinter {
     private static final String BUILD_MATRIX = "build_matrix";
     private static final String SEMAPHORE = "semaphore";
     private static final String REENTRANT_LOCKER = "reentrant_locker";
-    private static final String COUNT_DOWN_LATCH = "count_down_latch";
     private static final String CUSTOM = "custom";
 
     private MessageManager messageManager;
@@ -48,7 +47,6 @@ public class ConsolePrinter {
         System.out.println(messageManager.getString(BUILD_MATRIX));
         System.out.println(messageManager.getString(SEMAPHORE));
         System.out.println(messageManager.getString(REENTRANT_LOCKER));
-        System.out.println(messageManager.getString(COUNT_DOWN_LATCH));
         System.out.println(messageManager.getString(CUSTOM));
         System.out.println(messageManager.getString("press_to_exit") + "\n");
         System.out.println(messageManager.getString("press_to_choice"));

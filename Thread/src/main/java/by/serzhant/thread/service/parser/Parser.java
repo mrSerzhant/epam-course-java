@@ -1,12 +1,15 @@
 package by.serzhant.thread.service.parser;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Parser {
+    private static final Logger LOGGER = LogManager.getLogger(Parser.class);
 
     public List<Integer> parseDiapason(String inputString) {
-
         String[] arrayStrings = inputString.split(" ");
 
         try {
@@ -16,12 +19,13 @@ public class Parser {
             ArrayList<Integer> list = new ArrayList<>();
             list.add(firstLimit);
             list.add(secondLimit);
+            LOGGER.info("diapason elements: {} {}", firstLimit, secondLimit);
             return list;
 
         } catch (NumberFormatException e) {
+            LOGGER.error("bad diapason elements data");
             return new ArrayList<>();
         }
-
     }
 
     public Integer[][] parseMatrixElement(List<String> inputData) {
@@ -36,12 +40,13 @@ public class Parser {
                 try {
                     tempMatrix[i - 1][j] = Integer.parseInt(arrayStrings[j]);
                 } catch (NumberFormatException e) {
-
+                    LOGGER.error("bad matrix data");
                     return new Integer[0][0];
                 }
             }
         }
 
+        LOGGER.info("success parsing");
         return tempMatrix;
     }
 
@@ -57,12 +62,13 @@ public class Parser {
                 try {
                     tempMatrix[i][j] = Integer.parseInt(arrayStrings[j]);
                 } catch (NumberFormatException e) {
-
+                    LOGGER.error("bad matrix data");
                     return new Integer[0][0];
                 }
             }
         }
 
+        LOGGER.info("success parsing");
         return tempMatrix;
     }
 }

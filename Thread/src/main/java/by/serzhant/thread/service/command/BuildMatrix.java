@@ -24,12 +24,12 @@ public class BuildMatrix implements Command {
         Validator validator = new Validator();
 
         if (!validator.isValidMatrixData(dataList)) {
-            return "invalid data matrix";
+            return "invalid_data_matrix";
         }
 
 
         if (!validator.isValidCountElement(threadList)) {
-            return "invalid thread";
+            return "invalid_number_threads";
         }
 
         Parser parser = new Parser();

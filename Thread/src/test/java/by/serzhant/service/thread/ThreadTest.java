@@ -1,8 +1,9 @@
 package by.serzhant.service.thread;
 
 import by.serzhant.thread.entity.Matrix;
-import by.serzhant.thread.service.thread.ThreadCountDownLatch;
+import by.serzhant.thread.service.command.CustomThreadExample;
 import by.serzhant.thread.service.thread.ThreadCustom;
+import by.serzhant.thread.service.thread.ThreadInitMatrix;
 import by.serzhant.thread.service.thread.ThreadReentrantLock;
 import by.serzhant.thread.service.thread.ThreadSemaphore;
 import org.testng.Assert;
@@ -11,7 +12,6 @@ import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
@@ -20,10 +20,47 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ThreadTest {
 
     @DataProvider(name = "data-not-equals")
-    public Object[][] dataProviderArrayPositive() {
+    public Object[][] dataProviderThread() {
         Integer[][] matrix = {{0, 5, -2}, {2, 0, -4}, {-3, 5, 0}};
 
         return new Object[][]{{new Matrix(matrix)}};
+    }
+
+    @DataProvider(name = "init-matrix-equals")
+    public Object[][] dataProviderInitMatrix() {
+        List<String> dataList = new ArrayList<>();
+        dataList.add("3");
+        dataList.add("0 5 -2");
+        dataList.add("2 0 -4");
+        dataList.add("3 5 0");
+
+        return new Object[][]{{dataList}};
+    }
+
+    @Test(dataProvider = "init-matrix-equals")
+    public void initMatrixThreadTest(List<String> inputData) {
+        Integer[][] m1 = {{0,5,-2},{2,0,-4},{3,5,0}};
+        Matrix matrix1 = new Matrix(m1);
+
+        Integer[][] m2 = new Integer[inputData.size()-1][inputData.size()-1];
+
+        ExecutorService service = Executors.newFixedThreadPool(inputData.size()-1);
+
+        List<ThreadInitMatrix> list = new ArrayList<>();
+        for (int i = 1; i < inputData.size(); i++) {
+            list.add(new ThreadInitMatrix(m2, i, inputData));
+        }
+
+        try {
+            service.invokeAll(list);
+        } catch (Exception e) {
+        }
+
+        service.shutdown();
+
+        Matrix matrix2 = new Matrix(m2);
+
+        Assert.assertEquals(matrix1,matrix2);
     }
 
     @Test(dataProvider = "data-not-equals")
@@ -88,36 +125,6 @@ public class ThreadTest {
     }
 
     @Test(dataProvider = "data-not-equals")
-    public void countDownLatchThreadTest(Matrix inputMatrix) {
-        List<Integer> listElement = new ArrayList<>();
-        listElement.add(inputMatrix.getElement(0));
-        listElement.add(inputMatrix.getElement(1));
-        listElement.add(inputMatrix.getElement(2));
-
-        ExecutorService service = Executors.newFixedThreadPool(inputMatrix.getRowLength());
-        CountDownLatch countDownLatch = new CountDownLatch(inputMatrix.getRowLength());
-
-        service.execute(new ThreadCountDownLatch(countDownLatch, inputMatrix, 0));
-        service.execute(new ThreadCountDownLatch(countDownLatch, inputMatrix, 1));
-        service.execute(new ThreadCountDownLatch(countDownLatch, inputMatrix, 2));
-
-        try {
-            countDownLatch.await();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        service.shutdown();
-
-        List<Integer> newListElement = new ArrayList<>();
-        newListElement.add(inputMatrix.getElement(0));
-        newListElement.add(inputMatrix.getElement(1));
-        newListElement.add(inputMatrix.getElement(2));
-
-        Assert.assertNotEquals(listElement,newListElement);
-    }
-
-    @Test(dataProvider = "data-not-equals")
     public void customThreadTest(Matrix inputMatrix) {
         List<Integer> listElement = new ArrayList<>();
         listElement.add(inputMatrix.getElement(0));
@@ -144,6 +151,13 @@ public class ThreadTest {
         newListElement.add(inputMatrix.getElement(1));
         newListElement.add(inputMatrix.getElement(2));
 
+        CustomThreadExample c = new CustomThreadExample();
+
         Assert.assertNotEquals(listElement,newListElement);
     }
+
+
+
+
+
 }

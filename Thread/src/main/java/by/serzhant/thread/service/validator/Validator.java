@@ -1,10 +1,14 @@
 package by.serzhant.thread.service.validator;
 
 import by.serzhant.thread.service.parser.Parser;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
 public class Validator {
+    private static final Logger LOGGER = LogManager.getLogger(Validator.class);
+
     public boolean isValidMatrixData(List<String> inputData) {
         if (!inputData.isEmpty()) {
             Parser parser = new Parser();
@@ -15,11 +19,13 @@ public class Validator {
                 Integer[][] matrix = parser.parseMatrixElement(inputData);
 
                 if (isSquareMatrix(matrix) && matrix.length == sizeMatrix && isCorrectDiagonal(matrix)) {
+                    LOGGER.info("valid matrix data");
                     return true;
                 }
             }
         }
 
+        LOGGER.error("invalid matrix data");
         return false;
     }
 
@@ -34,12 +40,13 @@ public class Validator {
                 if (!list.isEmpty()) {
                     int fistLimit = list.get(0);
                     int secondLimit = list.get(1);
-
+                    LOGGER.info("valid count thread");
                     return isValidDiapason(fistLimit, secondLimit);
                 }
             }
         }
 
+        LOGGER.error("invalid count thread");
         return false;
     }
 
@@ -49,10 +56,12 @@ public class Validator {
         for (int i = 0; i < inputMatrix.length; i++) {
 
             if (countRow != inputMatrix[i].length) {
+                LOGGER.error("isnot square matrix");
                 return false;
             }
         }
 
+        LOGGER.info("square matrix");
         return true;
     }
 
@@ -68,10 +77,12 @@ public class Validator {
         for (int i = 0; i < inputMatrix.length; i++) {
 
             if (inputMatrix[i][i] != 0) {
+                LOGGER.error("invalid value diagonal elements ");
                 return false;
             }
         }
 
+        LOGGER.info("valid value diagonal elements ");
         return true;
     }
 
@@ -79,19 +90,14 @@ public class Validator {
 
         try {
             if (Integer.parseInt(inputString) > 1) {
+                LOGGER.info("valid matrix size");
                 return true;
             }
         } catch (NumberFormatException e) {
+            LOGGER.error("invalid matrix size");
             return false;
         }
 
         return false;
     }
 }
-
-
-
-
-
-
-
