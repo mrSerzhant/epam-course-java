@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gems xmlns="http://www.training.by/gems">
+
+    <naturalGem name="almaz" ID="das" price="High">
+        <preciousness>precious</preciousness>
+        <origin>Canada</origin>
+        <visual>
+            <color>22</color>
+            <transparency>80</transparency>
+            <facet>8</facet>
+        </visual>
+        <weight>10</weight>
+        <miningMethod>manual</miningMethod>
+    </naturalGem>
+
+    <synthesizedGem name="spinel" ID="2">
+        <preciousness>precious</preciousness>
+        <origin>Brazil</origin>
+        <visual>
+            <color>red</color>
+            <transparency>2</transparency>
+            <facet>8</facet>
+        </visual>
+        <weight>20</weight>
+        <creationDate>2012-11-22</creationDate>
+    </synthesizedGem>
+
+    <synthesizedGem name="zirkon" ID="3" price="Medium">
+        <preciousness>precious</preciousness>
+        <origin>Australia</origin>
+        <visual>
+            <color>brown</color>
+            <transparency>50</transparency>
+            <facet>ds</facet>
+        </visual>
+        <weight>15</weight>
+        <creationDate>2012-11-22</creationDate>
+    </synthesizedGem>
+
+    <naturalGem name="topaz" ID="4">
+        <preciousness>precious</preciousness>
+        <origin>Russia</origin>
+        <visual>
+            <color>yellow</color>
+            <transparency>50</transparency>
+            <facet>10</facet>
+        </visual>
+        <weight>33</weight>
+        <miningMethod>mechanical</miningMethod>
+    </naturalGem>
+
+    <naturalGem name="quarz" ID="5" price="Low">
+        <preciousness>semiprecious</preciousness>
+        <origin>USA</origin>
+        <visual>
+            <color>white</color>
+            <transparency>60</transparency>
+            <facet>14</facet>
+        </visual>
+        <weight>10</weight>
+        <miningMethod>mechanical</miningMethod>
+    </naturalGem>
+
+    <synthesizedGem name="opal" ID="6">
+        <preciousness>semiprecious</preciousness>
+        <origin>Australia</origin>
+        <visual>
+            <color>blue</color>
+            <transparency>30</transparency>
+            <facet>13</facet>
+        </visual>
+        <weight>44</weight>
+        <creationDate>2012-11-22</creationDate>
+    </synthesizedGem>
+
+</gems>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<schema elementFormDefault="qualified"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.training.by/gems"
+        xmlns:tns="http://www.training.by/gems">
+
+    <element name="gems">
+        <complexType>
+            <sequence>
+                <element ref="tns:gem" minOccurs="0" maxOccurs="16"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="gem" type="tns:Gem" abstract="true"/>
+    <element name="naturalGem" type="tns:NaturalGem" substitutionGroup="tns:gem"/>
+    <element name="synthesizedGem" type="tns:SynthesizedGem" substitutionGroup="tns:gem"/>
+
+    <complexType name="Gem">
+        <sequence>
+            <element name="preciousness" type="tns:Preciousness"/>
+            <element name="origin" type="tns:Origin"/>
+            <element name="visual" type="tns:Visual"/>
+            <element name="weight" type="decimal"/>
+        </sequence>
+        <attribute name="name" type="string" use="required"/>
+        <attribute name="ID" type="integer" use="required"/>
+        <attribute name="price" type="tns:Price" use="optional"/>
+    </complexType>
+
+    <complexType name="NaturalGem">
+        <complexContent>
+            <extension base="tns:Gem">
+                <sequence>
+                    <element name="miningMethod" type="tns:MiningMethod"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="SynthesizedGem">
+        <complexContent>
+            <extension base="tns:Gem">
+                <sequence>
+                    <element name="creationDate" type="date"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <simpleType name="Preciousness">
+        <restriction base="string">
+            <pattern value="precious|semiprecious"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Origin">
+        <restriction base="string">
+            <enumeration value="Russia"/>
+            <enumeration value="Canada"/>
+            <enumeration value="USA"/>
+            <enumeration value="Brazil"/>
+            <enumeration value="China"/>
+            <enumeration value="Australia"/>
+            <enumeration value="Brazil"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="Visual">
+        <sequence>
+            <element name="color" type="tns:Color"/>
+            <element name="transparency" type="tns:Transparency"/>
+            <element name="facet" type="tns:Facet"/>
+        </sequence>
+    </complexType>
+
+    <simpleType name="Color">
+        <restriction base="string">
+            <pattern value="[a-z]+"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Transparency">
+        <restriction base="decimal">
+            <minInclusive value="0"/>
+            <maxInclusive value="100"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Facet">
+        <restriction base="integer">
+            <minInclusive value="4"/>
+            <maxInclusive value="15"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="MiningMethod">
+        <restriction base="string">
+            <pattern value="manual|mechanical"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Price">
+        <restriction base="string">
+            <enumeration value="High"/>
+            <enumeration value="Medium"/>
+            <enumeration value="Low"/>
+        </restriction>
+    </simpleType>
+</schema>

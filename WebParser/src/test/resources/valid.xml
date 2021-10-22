@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gems xmlns="http://www.training.by/gems">
+
+    <naturalGem name="almaz" ID="1" price="High">
+        <preciousness>precious</preciousness>
+        <origin>Canada</origin>
+        <visual>
+            <color>different</color>
+            <transparency>80</transparency>
+            <facet>8</facet>
+        </visual>
+        <weight>10</weight>
+        <miningMethod>manual</miningMethod>
+    </naturalGem>
+
+    <synthesizedGem name="spinel" ID="2">
+        <preciousness>precious</preciousness>
+        <origin>Brazil</origin>
+        <visual>
+            <color>red</color>
+            <transparency>2</transparency>
+            <facet>8</facet>
+        </visual>
+        <weight>20</weight>
+        <creationDate>2012-11-22</creationDate>
+    </synthesizedGem>
+
+</gems>
